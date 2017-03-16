@@ -15,6 +15,7 @@
 		E6CB324B1E7A1AF1001368C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6CB32491E7A1AF1001368C2 /* LaunchScreen.storyboard */; };
 		E6CB32561E7A1AF2001368C2 /* SFDBFileManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CB32551E7A1AF2001368C2 /* SFDBFileManagerTests.m */; };
 		E6CB32611E7A1AF2001368C2 /* SFDBFileManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CB32601E7A1AF2001368C2 /* SFDBFileManagerUITests.m */; };
+		E6CB32731E7A1B73001368C2 /* SFFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CB32721E7A1B73001368C2 /* SFFileManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		E6CB325C1E7A1AF2001368C2 /* SFDBFileManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFDBFileManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CB32601E7A1AF2001368C2 /* SFDBFileManagerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFDBFileManagerUITests.m; sourceTree = "<group>"; };
 		E6CB32621E7A1AF2001368C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6CB32711E7A1B73001368C2 /* SFFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFFileManager.h; sourceTree = "<group>"; };
+		E6CB32721E7A1B73001368C2 /* SFFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFFileManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		E6CB323A1E7A1AF1001368C2 /* SFDBFileManager */ = {
 			isa = PBXGroup;
 			children = (
+				E6CB326E1E7A1B64001368C2 /* SFDBFileMain */,
 				E6CB323E1E7A1AF1001368C2 /* AppDelegate.h */,
 				E6CB323F1E7A1AF1001368C2 /* AppDelegate.m */,
 				E6CB32411E7A1AF1001368C2 /* ViewController.h */,
@@ -138,6 +142,31 @@
 				E6CB32621E7A1AF2001368C2 /* Info.plist */,
 			);
 			path = SFDBFileManagerUITests;
+			sourceTree = "<group>";
+		};
+		E6CB326E1E7A1B64001368C2 /* SFDBFileMain */ = {
+			isa = PBXGroup;
+			children = (
+				E6CB326F1E7A1B65001368C2 /* SFDBManager */,
+				E6CB32701E7A1B65001368C2 /* SFFileManager */,
+			);
+			path = SFDBFileMain;
+			sourceTree = "<group>";
+		};
+		E6CB326F1E7A1B65001368C2 /* SFDBManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SFDBManager;
+			sourceTree = "<group>";
+		};
+		E6CB32701E7A1B65001368C2 /* SFFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				E6CB32711E7A1B73001368C2 /* SFFileManager.h */,
+				E6CB32721E7A1B73001368C2 /* SFFileManager.m */,
+			);
+			path = SFFileManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +236,7 @@
 				TargetAttributes = {
 					E6CB32371E7A1AF1001368C2 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = AR3398K2DD;
 						ProvisioningStyle = Automatic;
 					};
 					E6CB32501E7A1AF2001368C2 = {
@@ -275,6 +305,7 @@
 			files = (
 				E6CB32431E7A1AF1001368C2 /* ViewController.m in Sources */,
 				E6CB32401E7A1AF1001368C2 /* AppDelegate.m in Sources */,
+				E6CB32731E7A1B73001368C2 /* SFFileManager.m in Sources */,
 				E6CB323D1E7A1AF1001368C2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AR3398K2DD;
 				INFOPLIST_FILE = SFDBFileManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cnlive-lsf.SFDBFileManager";
@@ -435,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AR3398K2DD;
 				INFOPLIST_FILE = SFDBFileManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cnlive-lsf.SFDBFileManager";
@@ -507,6 +540,7 @@
 				E6CB32671E7A1AF2001368C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6CB32681E7A1AF2001368C2 /* Build configuration list for PBXNativeTarget "SFDBFileManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +549,7 @@
 				E6CB326A1E7A1AF2001368C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6CB326B1E7A1AF2001368C2 /* Build configuration list for PBXNativeTarget "SFDBFileManagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +558,7 @@
 				E6CB326D1E7A1AF2001368C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
