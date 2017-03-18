@@ -8,6 +8,18 @@
 
 #import "SFFileManager.h"
 
+SFFileManager *manager = nil;
+
 @implementation SFFileManager
+#pragma mark share instance
++(instancetype)shareInstance{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (!manager) {
+            manager = [[SFFileManager alloc] init];
+        }
+    });
+    return manager;
+}
 
 @end

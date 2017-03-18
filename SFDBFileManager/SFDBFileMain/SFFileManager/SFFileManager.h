@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface SFFileManager : NSObject
+/**
+ init method
 
+ @return <#return value description#>
+ */
++(instancetype)shareInstance;
 @end
