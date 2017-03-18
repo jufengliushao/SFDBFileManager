@@ -22,4 +22,9 @@ SFFileManager *manager = nil;
     return manager;
 }
 
+#pragma mark - public method
+- (NSString *)sf_getHomeDirectoryPath{
+    return NSHomeDirectory();
+}
+
 @end
