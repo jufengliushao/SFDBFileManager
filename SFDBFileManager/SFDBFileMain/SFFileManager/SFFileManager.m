@@ -26,5 +26,4 @@ SFFileManager *manager = nil;
 - (NSString *)sf_getHomeDirectoryPath{
     return NSHomeDirectory();
 }
-
 @end

@@ -11,8 +11,15 @@
 @interface SFFileManager : NSObject
 /**
  init method
-
- @return <#return value description#>
+ 单利初始化方法
+ @return instancetype
  */
 +(instancetype)shareInstance;
+
+/**
+ return home path
+ 返回沙盒主目录
+ @return NSString
+ */
+- (NSString *)sf_getHomeDirectoryPath;
 @end
