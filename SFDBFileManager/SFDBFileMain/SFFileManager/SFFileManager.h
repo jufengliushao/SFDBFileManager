@@ -51,4 +51,30 @@
  @return NSString
  */
 - (NSString *)sf_getTmpPath;
+
+/**
+ return blunle file path
+
+ @param fileName file name
+ @param type file type
+ @return NSString
+ */
+- (NSString *)sf_getBlunleFilePath:(NSString *_Nonnull)fileName type:(NSString *_Nullable)type;
+
+/**
+ copy bundle file to path
+ 拷贝bundle文件到指定路径
+ @param file 文件名称和类型
+ @param path 指定目录
+ @return YES 完成 NO失败
+ */
+- (BOOL)sf_copyBundleFile:(NSString *_Nonnull)file toPath:(NSString *_Nonnull)path;
+
+/**
+ the file is extise in this path
+
+ @param path <#path description#>
+ @return <#return value description#>
+ */
+- (BOOL)sf_fileExist:(NSString *_Nullable)path;
 @end

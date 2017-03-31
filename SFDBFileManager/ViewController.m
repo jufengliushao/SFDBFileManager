@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", [[SFFileManager shareInstance] sf_getTmpPath]);
+    NSLog(@"%d----%@", [[SFFileManager shareInstance] sf_copyBundleFile:@"p.plist" toPath:[[SFFileManager shareInstance] sf_getTmpPath]], [[SFFileManager shareInstance] sf_getTmpPath]);
     // Do any additional setup after loading the view, typically from a nib.
 }
 

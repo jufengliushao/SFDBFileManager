@@ -42,4 +42,48 @@ SFFileManager *manager = nil;
 - (NSString *)sf_getTmpPath{
     return NSTemporaryDirectory();
 }
+
+- (NSString *)sf_getBlunleFilePath:(NSString *_Nonnull)fileName type:(NSString *_Nullable)type{
+    return [self getBundleFilePath:fileName type:type];
+}
+
+- (BOOL)sf_copyBundleFile:(NSString *_Nonnull)file toPath:(NSString *_Nonnull)path{
+    NSString *exist = [path stringByAppendingPathComponent:file];
+    NSString *bundleStr = [self sf_getBlunleFilePath:file type:nil];
+    if (!bundleStr) {
+        return NO;
+    }
+    if(![self sf_fileExist:exist]){
+        NSError *error;
+        return [[NSFileManager defaultManager] copyItemAtPath:bundleStr toPath:exist error:&error];
+    }
+    return YES;
+}
+
+- (BOOL)sf_fileExist:(NSString *_Nullable)path{
+    return [[NSFileManager defaultManager] fileExistsAtPath:path];
+}
+
+- (BOOL)sf_copyFilePath:(NSString *_Nonnull)filePath toPath:(NSString *_Nonnull)toPath{
+    BOOL isfileName = NO;
+    if ([[self returnFileNameFromPath:filePath] isEqualToString:[self returnFileNameFromPath:toPath]]) {
+        isfileName = YES;
+    }
+    NSString *finalPath = isfileName ? toPath : [toPath stringByAppendingPathComponent:[self returnFileNameFromPath:filePath]];
+    if (![self sf_fileExist:finalPath]) {
+        NSError *error;
+        return [[NSFileManager defaultManager] copyItemAtPath:filePath toPath:finalPath error:&error];
+    }
+    return YES;
+}
+#pragma mark - private method
+- (NSString *)getBundleFilePath:(NSString *_Nonnull)fileName type:(NSString *_Nullable)fileType{
+    return [[NSBundle mainBundle] pathForResource:fileName ofType:fileType];
+}
+
+- (NSString *)returnFileNameFromPath:(NSString *)path{
+    NSArray *arr = [path componentsSeparatedByString:@"/"];
+    NSString *fileName = [arr.lastObject length] > 0 ? arr.lastObject : ((arr.count > 1) ? arr[arr.count - 2] : nil);
+    return fileName;
+}
 @end
