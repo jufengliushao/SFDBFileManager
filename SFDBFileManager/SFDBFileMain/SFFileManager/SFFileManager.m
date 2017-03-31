@@ -70,6 +70,10 @@ SFFileManager *manager = nil;
         isfileName = YES;
     }
     NSString *finalPath = isfileName ? toPath : [toPath stringByAppendingPathComponent:[self returnFileNameFromPath:filePath]];
+    if (![self sf_fileExist:filePath]) {
+        // 文件不存在
+        return NO;
+    }
     if (![self sf_fileExist:finalPath]) {
         NSError *error;
         return [[NSFileManager defaultManager] copyItemAtPath:filePath toPath:finalPath error:&error];

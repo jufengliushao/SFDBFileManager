@@ -77,4 +77,13 @@
  @return <#return value description#>
  */
 - (BOOL)sf_fileExist:(NSString *_Nullable)path;
+
+/**
+ copy file from path1 to path2
+
+ @param filePath path1
+ @param toPath path2
+ @return YES 完成 NO失败
+ */
+- (BOOL)sf_copyFilePath:(NSString *_Nonnull)filePath toPath:(NSString *_Nonnull)toPath;
 @end
