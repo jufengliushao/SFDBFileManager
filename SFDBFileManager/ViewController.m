@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", [[SFFileManager shareInstance] sf_getHomeDirectoryPath]);
+    NSLog(@"%@", [[SFFileManager shareInstance] sf_getTmpPath]);
     // Do any additional setup after loading the view, typically from a nib.
 }
 

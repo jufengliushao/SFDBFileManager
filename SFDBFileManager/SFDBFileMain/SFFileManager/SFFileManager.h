@@ -22,4 +22,33 @@
  @return NSString
  */
 - (NSString *)sf_getHomeDirectoryPath;
+
+/**
+ return documents path
+ 返回documents路径
+
+ @return NSString
+ */
+- (NSString *)sf_getDocumentsPath;
+
+/**
+ return Library path
+ 返回Liarary路径
+ @return NSString
+ */
+- (NSString *)sf_getLibraryPath;
+
+/**
+ return Caches path
+ 返回Caches路径
+ @return NSString
+ */
+- (NSString *)sf_getCachePath;
+
+/**
+ return Tmp path
+ 返回tmp路径
+ @return NSString
+ */
+- (NSString *)sf_getTmpPath;
 @end

@@ -26,4 +26,20 @@ SFFileManager *manager = nil;
 - (NSString *)sf_getHomeDirectoryPath{
     return NSHomeDirectory();
 }
+
+- (NSString *)sf_getDocumentsPath{
+    return NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+}
+
+- (NSString *)sf_getLibraryPath{
+    return NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)[0];
+}
+
+- (NSString *)sf_getCachePath{
+    return NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+}
+
+- (NSString *)sf_getTmpPath{
+    return NSTemporaryDirectory();
+}
 @end
