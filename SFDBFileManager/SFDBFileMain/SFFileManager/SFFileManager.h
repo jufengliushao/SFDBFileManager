@@ -86,4 +86,12 @@
  @return YES 完成 NO失败
  */
 - (BOOL)sf_copyFilePath:(NSString *_Nonnull)filePath toPath:(NSString *_Nonnull)toPath;
+
+/**
+ delete file with path
+
+ @param filePath file Path
+ @return YES 完成 NO失败
+ */
+- (BOOL)sf_deleteFileWithPath:(NSString *_Nullable)filePath;
 @end
