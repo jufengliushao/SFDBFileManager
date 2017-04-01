@@ -89,6 +89,18 @@ SFFileManager *manager = nil;
     NSError *error;
     return [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
 }
+
+- (BOOL)sf_createDocumentBy:(NSString *_Nonnull)docName path:(NSString *_Nonnull)path{
+    NSString *finalPath = [[self returnFileNameFromPath:path] isEqualToString:docName] ? path : [path stringByAppendingPathComponent:docName];
+    if (!finalPath) {
+        // 参数错误
+        return NO;
+    }
+    if (![self sf_fileExist:finalPath]) {
+        return [[NSFileManager defaultManager] createDirectoryAtPath:finalPath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    return YES;
+}
 #pragma mark - private method
 - (NSString *)getBundleFilePath:(NSString *_Nonnull)fileName type:(NSString *_Nullable)fileType{
     return [[NSBundle mainBundle] pathForResource:fileName ofType:fileType];

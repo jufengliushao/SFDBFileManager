@@ -16,8 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *str = [[[SFFileManager shareInstance] sf_getCachePath] stringByAppendingPathComponent:@"q.plist"];
-    NSLog(@"%d----%@", [[SFFileManager shareInstance] sf_deleteFileWithPath:str], [[SFFileManager shareInstance] sf_getTmpPath]);
+    NSString *str = [[[SFFileManager shareInstance] sf_getCachePath] stringByAppendingPathComponent:@"q"];
+    NSLog(@"%d----%@", [[SFFileManager shareInstance] sf_createDocumentBy:@"q" path:str], [[SFFileManager shareInstance] sf_getTmpPath]);
     // Do any additional setup after loading the view, typically from a nib.
 }
 

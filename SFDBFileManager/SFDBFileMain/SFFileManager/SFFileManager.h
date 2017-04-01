@@ -14,14 +14,14 @@
  单利初始化方法
  @return instancetype
  */
-+(instancetype)shareInstance;
++(instancetype _Nonnull)shareInstance;
 
 /**
  return home path
  返回沙盒主目录
  @return NSString
  */
-- (NSString *)sf_getHomeDirectoryPath;
+- (NSString *_Nonnull)sf_getHomeDirectoryPath;
 
 /**
  return documents path
@@ -29,28 +29,28 @@
 
  @return NSString
  */
-- (NSString *)sf_getDocumentsPath;
+- (NSString *_Nonnull)sf_getDocumentsPath;
 
 /**
  return Library path
  返回Liarary路径
  @return NSString
  */
-- (NSString *)sf_getLibraryPath;
+- (NSString *_Nonnull)sf_getLibraryPath;
 
 /**
  return Caches path
  返回Caches路径
  @return NSString
  */
-- (NSString *)sf_getCachePath;
+- (NSString *_Nonnull)sf_getCachePath;
 
 /**
  return Tmp path
  返回tmp路径
  @return NSString
  */
-- (NSString *)sf_getTmpPath;
+- (NSString *_Nonnull)sf_getTmpPath;
 
 /**
  return blunle file path
@@ -59,7 +59,7 @@
  @param type file type
  @return NSString
  */
-- (NSString *)sf_getBlunleFilePath:(NSString *_Nonnull)fileName type:(NSString *_Nullable)type;
+- (NSString *_Nonnull)sf_getBlunleFilePath:(NSString *_Nonnull)fileName type:(NSString *_Nullable)type;
 
 /**
  copy bundle file to path
@@ -94,4 +94,13 @@
  @return YES 完成 NO失败
  */
 - (BOOL)sf_deleteFileWithPath:(NSString *_Nullable)filePath;
+
+/**
+ create doc at path
+
+ @param docName doc-name
+ @param path path
+ @return YES 完成 NO失败
+ */
+- (BOOL)sf_createDocumentBy:(NSString *_Nonnull)docName path:(NSString *_Nonnull)path;
 @end
