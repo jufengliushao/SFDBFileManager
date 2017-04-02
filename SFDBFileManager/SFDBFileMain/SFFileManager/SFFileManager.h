@@ -103,4 +103,12 @@
  @return YES 完成 NO失败
  */
 - (BOOL)sf_createDocumentBy:(NSString *_Nonnull)docName path:(NSString *_Nonnull)path;
+
+/**
+ delete doc at path
+
+ @param path doc-path
+ @return YES 完成 NO失败
+ */
+- (BOOL)sf_deleteDocumentWithPath:(NSString *_Nullable)path;
 @end

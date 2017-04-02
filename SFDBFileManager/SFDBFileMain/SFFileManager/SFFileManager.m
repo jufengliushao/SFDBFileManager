@@ -101,6 +101,14 @@ SFFileManager *manager = nil;
     }
     return YES;
 }
+
+- (BOOL)sf_deleteDocumentWithPath:(NSString *_Nullable)path{
+    if (![self sf_fileExist:path]) {
+        // 传入参数有误
+        return YES;
+    }
+    return [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
+}
 #pragma mark - private method
 - (NSString *)getBundleFilePath:(NSString *_Nonnull)fileName type:(NSString *_Nullable)fileType{
     return [[NSBundle mainBundle] pathForResource:fileName ofType:fileType];
