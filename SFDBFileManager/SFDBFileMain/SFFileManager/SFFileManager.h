@@ -111,4 +111,12 @@
  @return YES 完成 NO失败
  */
 - (BOOL)sf_deleteDocumentWithPath:(NSString *_Nullable)path;
+
+/**
+ return all files in path
+
+ @param path doc-path
+ @return NSArray
+ */
+- (NSArray *_Nullable)sf_getAllFilesInPath:(NSString *_Nullable)path;
 @end
