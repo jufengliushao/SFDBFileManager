@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSString *str = [[[SFFileManager shareInstance] sf_getCachePath] stringByAppendingPathComponent:@"q"];
-    NSLog(@"%@----%@", [[SFFileManager shareInstance] sf_getAllFilesInPath:[[SFFileManager shareInstance] sf_getCachePath]], str);
+//    NSLog(@"%@----%@", [[SFFileManager shareInstance] sf_getAllFilesInPath:[[SFFileManager shareInstance] sf_getCachePath]], str);
     // Do any additional setup after loading the view, typically from a nib.
 }
 
