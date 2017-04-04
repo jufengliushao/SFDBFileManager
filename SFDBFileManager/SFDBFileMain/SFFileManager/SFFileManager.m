@@ -117,6 +117,20 @@ SFFileManager *manager = nil;
     }
     return [[NSArray alloc] initWithArray:[[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil]];
 }
+
+- (BOOL)sf_deleteAllFilesInPath:(NSString *_Nullable)path{
+    if (![self sf_fileExist:path]) {
+        // 路径出错
+        return NO;
+    }
+    NSArray *arr = [self sf_getAllFilesInPath:path];
+    if (arr.count) {
+        for (NSString *str in arr) {
+            [[NSFileManager defaultManager] removeItemAtPath:[path stringByAppendingPathComponent:str] error:nil];
+        }
+    }
+    return YES;
+}
 #pragma mark - private method
 - (NSString *)getBundleFilePath:(NSString *_Nonnull)fileName type:(NSString *_Nullable)fileType{
     return [[NSBundle mainBundle] pathForResource:fileName ofType:fileType];

@@ -119,4 +119,12 @@
  @return NSArray
  */
 - (NSArray *_Nullable)sf_getAllFilesInPath:(NSString *_Nullable)path;
+
+/**
+ delete all files in path
+
+ @param path doc-path
+ @return YES 完成 NO失败
+ */
+- (BOOL)sf_deleteAllFilesInPath:(NSString *_Nullable)path;
 @end
