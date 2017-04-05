@@ -143,4 +143,13 @@
  @param callBack read resulet
  */
 - (void)sf_asyncReadDataAtPath:(NSString *_Nullable)path callBack:(void(^_Nullable)(NSData *_Nullable data))callBack;
+
+/**
+ create file at path
+
+ @param fileName file-name
+ @param path doc-path
+ @return YES 完成 NO失败
+ */
+- (BOOL)sf_createFile:(NSString *_Nullable)fileName path:(NSString *_Nullable)path;
 @end

@@ -156,6 +156,28 @@ SFFileManager *manager = nil;
         callBack(data);
     });
 }
+
+- (void)sf_writeDictionary:(NSDictionary __kindof* _Nullable)dict toPath:(NSString *_Nullable)path{
+    if (!path) {
+        // 参数错误
+        return;
+    }
+    if (![self sf_fileExist:path]) {
+        // 文件不存在，创建
+//        [self sf_]
+    }
+}
+
+- (BOOL)sf_createFile:(NSString *_Nullable)fileName path:(NSString *_Nullable)path{
+    if (path && (fileName || [[self returnFileNameFromPath:path] isEqualToString:fileName])) {
+        if (![self sf_fileExist:path]) {
+            NSString *str = [[self returnFileNameFromPath:path] isEqualToString:fileName] ? path : [path stringByAppendingPathComponent:fileName];
+            return [[NSFileManager defaultManager] createFileAtPath:str contents:nil attributes:nil];
+        }
+        return YES;
+    }
+    return NO;
+}
 #pragma mark - private method
 - (NSString *)getBundleFilePath:(NSString *_Nonnull)fileName type:(NSString *_Nullable)fileType{
     return [[NSBundle mainBundle] pathForResource:fileName ofType:fileType];

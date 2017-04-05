@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSString *str = [[SFFileManager shareInstance] sf_getTmpPath];
+    NSLog(@"%d---%@", [[SFFileManager shareInstance] sf_createFile:@"a.txt" path:[str stringByAppendingPathComponent:@"d/a.txt"]], str);
 }
 
 
