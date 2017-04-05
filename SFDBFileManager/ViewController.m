@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSString *str = [[SFFileManager shareInstance] sf_getTmpPath];
-    NSLog(@"%d----%@", [[SFFileManager shareInstance] sf_deleteAllFilesInPath:str], str);
+    [[SFFileManager shareInstance] sf_removeFilesWithExtension:@"jpg" atPath:str];
+    NSLog(@"%@", str);
     // Do any additional setup after loading the view, typically from a nib.
 }
 

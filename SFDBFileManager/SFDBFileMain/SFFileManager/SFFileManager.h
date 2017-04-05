@@ -127,4 +127,12 @@
  @return YES 完成 NO失败
  */
 - (BOOL)sf_deleteAllFilesInPath:(NSString *_Nullable)path;
+
+/**
+ remove file.extension at doc-path
+
+ @param extension extension
+ @param path doc-path
+ */
+- (void)sf_removeFilesWithExtension:(NSString *_Nullable)extension atPath:(NSString *_Nullable)path;
 @end

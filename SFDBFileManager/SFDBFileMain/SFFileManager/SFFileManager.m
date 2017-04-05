@@ -131,6 +131,20 @@ SFFileManager *manager = nil;
     }
     return YES;
 }
+
+- (void)sf_removeFilesWithExtension:(NSString *_Nullable)extension atPath:(NSString *_Nullable)path{
+    if (!path || !extension || ![self sf_fileExist:path]) {
+        // 参数错误
+        return;
+    }
+    NSArray *files = [self sf_getAllFilesInPath:path];
+    NSFileManager *m = [NSFileManager defaultManager];
+    [files enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([[obj pathExtension] isEqualToString:extension]) {
+            [m removeItemAtPath:[path stringByAppendingPathComponent:obj] error:nil];
+        }
+    }];
+}
 #pragma mark - private method
 - (NSString *)getBundleFilePath:(NSString *_Nonnull)fileName type:(NSString *_Nullable)fileType{
     return [[NSBundle mainBundle] pathForResource:fileName ofType:fileType];
