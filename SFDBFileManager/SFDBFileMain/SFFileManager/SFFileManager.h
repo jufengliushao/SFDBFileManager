@@ -135,4 +135,12 @@
  @param path doc-path
  */
 - (void)sf_removeFilesWithExtension:(NSString *_Nullable)extension atPath:(NSString *_Nullable)path;
+
+/**
+ async-read flies data
+
+ @param path flie-path
+ @param callBack read resulet
+ */
+- (void)sf_asyncReadDataAtPath:(NSString *_Nullable)path callBack:(void(^_Nullable)(NSData *_Nullable data))callBack;
 @end

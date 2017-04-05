@@ -145,6 +145,17 @@ SFFileManager *manager = nil;
         }
     }];
 }
+
+- (void)sf_asyncReadDataAtPath:(NSString *_Nullable)path callBack:(void(^_Nullable)(NSData *_Nullable data))callBack{
+    if (!path || ![self sf_fileExist:path]) {
+        // 参数错误
+        callBack(nil);
+    }
+    dispatch_async(dispatch_queue_create("async.read.file", DISPATCH_QUEUE_CONCURRENT), ^{
+        NSData *data = [[NSFileManager defaultManager] contentsAtPath:path];
+        callBack(data);
+    });
+}
 #pragma mark - private method
 - (NSString *)getBundleFilePath:(NSString *_Nonnull)fileName type:(NSString *_Nullable)fileType{
     return [[NSBundle mainBundle] pathForResource:fileName ofType:fileType];
