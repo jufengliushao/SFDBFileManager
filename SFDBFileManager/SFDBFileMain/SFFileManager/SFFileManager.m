@@ -164,7 +164,11 @@ SFFileManager *manager = nil;
     }
     if (![self sf_fileExist:path]) {
         // 文件不存在，创建
-//        [self sf_]
+        if ([self sf_createFile:nil path:path]) {
+            
+        }else{
+            return;
+        }
     }
 }
 
