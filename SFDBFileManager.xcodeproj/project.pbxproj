@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E61F33BB1E8E43A200480504 /* q.plist in Resources */ = {isa = PBXBuildFile; fileRef = E61F33BA1E8E43A200480504 /* q.plist */; };
+		E6AE58BE1E9CD339004E34F1 /* SFDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AE58BD1E9CD339004E34F1 /* SFDBManager.m */; };
 		E6CB323D1E7A1AF1001368C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CB323C1E7A1AF1001368C2 /* main.m */; };
 		E6CB32401E7A1AF1001368C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CB323F1E7A1AF1001368C2 /* AppDelegate.m */; };
 		E6CB32431E7A1AF1001368C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CB32421E7A1AF1001368C2 /* ViewController.m */; };
@@ -38,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		E61F33BA1E8E43A200480504 /* q.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = q.plist; sourceTree = "<group>"; };
+		E6AE58BC1E9CD339004E34F1 /* SFDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBManager.h; sourceTree = "<group>"; };
+		E6AE58BD1E9CD339004E34F1 /* SFDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDBManager.m; sourceTree = "<group>"; };
 		E6CB32381E7A1AF1001368C2 /* SFDBFileManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFDBFileManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CB323C1E7A1AF1001368C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6CB323E1E7A1AF1001368C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 			children = (
 				E6CB32711E7A1B73001368C2 /* SFFileManager.h */,
 				E6CB32721E7A1B73001368C2 /* SFFileManager.m */,
+				E6AE58BC1E9CD339004E34F1 /* SFDBManager.h */,
+				E6AE58BD1E9CD339004E34F1 /* SFDBManager.m */,
 			);
 			path = SFFileManager;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				E6CB32401E7A1AF1001368C2 /* AppDelegate.m in Sources */,
 				E6CB32731E7A1B73001368C2 /* SFFileManager.m in Sources */,
 				E6CB323D1E7A1AF1001368C2 /* main.m in Sources */,
+				E6AE58BE1E9CD339004E34F1 /* SFDBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
