@@ -8,6 +8,17 @@
 
 #import "SFDBManager.h"
 
+SFDBManager *m = nil;
+
 @implementation SFDBManager
++ (instancetype)shareInstance{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (!m) {
+            m = [[SFDBManager alloc] init];
+        }
+    });
+    return m;
+}
 
 @end
