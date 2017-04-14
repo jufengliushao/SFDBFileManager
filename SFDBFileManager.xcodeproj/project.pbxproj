@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E61F33BB1E8E43A200480504 /* q.plist in Resources */ = {isa = PBXBuildFile; fileRef = E61F33BA1E8E43A200480504 /* q.plist */; };
 		E6AE58BE1E9CD339004E34F1 /* SFDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AE58BD1E9CD339004E34F1 /* SFDBManager.m */; };
+		E6AE58C11EA06C8C004E34F1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AE58C01EA06C8C004E34F1 /* libsqlite3.tbd */; };
 		E6CB323D1E7A1AF1001368C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CB323C1E7A1AF1001368C2 /* main.m */; };
 		E6CB32401E7A1AF1001368C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CB323F1E7A1AF1001368C2 /* AppDelegate.m */; };
 		E6CB32431E7A1AF1001368C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CB32421E7A1AF1001368C2 /* ViewController.m */; };
@@ -41,6 +42,7 @@
 		E61F33BA1E8E43A200480504 /* q.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = q.plist; sourceTree = "<group>"; };
 		E6AE58BC1E9CD339004E34F1 /* SFDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBManager.h; sourceTree = "<group>"; };
 		E6AE58BD1E9CD339004E34F1 /* SFDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDBManager.m; sourceTree = "<group>"; };
+		E6AE58C01EA06C8C004E34F1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E6CB32381E7A1AF1001368C2 /* SFDBFileManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFDBFileManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CB323C1E7A1AF1001368C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6CB323E1E7A1AF1001368C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6AE58C11EA06C8C004E34F1 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6AE58BF1EA06C8B004E34F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6AE58C01EA06C8C004E34F1 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E6CB322F1E7A1AF1001368C2 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +104,7 @@
 				E6CB32541E7A1AF2001368C2 /* SFDBFileManagerTests */,
 				E6CB325F1E7A1AF2001368C2 /* SFDBFileManagerUITests */,
 				E6CB32391E7A1AF1001368C2 /* Products */,
+				E6AE58BF1EA06C8B004E34F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
