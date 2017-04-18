@@ -10,4 +10,6 @@
 
 @interface SFDBManager : NSObject
 + (instancetype)shareInstance;
+
+- (BOOL)db_open;
 @end
