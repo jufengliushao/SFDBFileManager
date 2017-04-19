@@ -8,6 +8,10 @@
 
 #import "SFDBManager.h"
 
+@interface SFDBManager()
+
+@end
+
 SFDBManager *m = nil;
 
 @implementation SFDBManager
@@ -21,4 +25,8 @@ SFDBManager *m = nil;
     return m;
 }
 
+#pragma mark - public method
+- (BOOL)db_open{
+    return YES;
+}
 @end

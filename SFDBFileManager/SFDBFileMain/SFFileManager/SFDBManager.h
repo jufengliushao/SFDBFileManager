@@ -12,4 +12,5 @@
 + (instancetype)shareInstance;
 
 - (BOOL)db_open;
+- (BOOL)db_close;
 @end
