@@ -7,9 +7,10 @@
 //
 
 #import "SFDBManager.h"
-
-@interface SFDBManager()
-
+#import <sqlite3.h>
+@interface SFDBManager(){
+    NSMutableDictionary *_dbDit;
+}
 @end
 
 SFDBManager *m = nil;
@@ -25,8 +26,19 @@ SFDBManager *m = nil;
     return m;
 }
 
+- (instancetype)init{
+    if (self = [super init]) {
+        _dbDit = [NSMutableDictionary dictionaryWithCapacity:0];
+    }
+    return self;
+}
+
 #pragma mark - public method
 - (BOOL)db_open{
+    return YES;
+}
+
+- (BOOL)db_close{
     return YES;
 }
 @end
