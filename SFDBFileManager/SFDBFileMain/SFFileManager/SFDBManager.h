@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface SFDBManager : NSObject
-+ (instancetype)shareInstance;
++ (instancetype _Nonnull)shareInstance;
 
-- (BOOL)db_open;
+- (BOOL)db_openWithDocPath:(NSString *_Nonnull)dbPath;
 - (BOOL)db_close;
 @end

@@ -16,7 +16,7 @@
 SFDBManager *m = nil;
 
 @implementation SFDBManager
-+ (instancetype)shareInstance{
++ (instancetype _Nonnull)shareInstance{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         if (!m) {
@@ -34,7 +34,7 @@ SFDBManager *m = nil;
 }
 
 #pragma mark - public method
-- (BOOL)db_open{
+- (BOOL)db_openWithDocPath:(NSString *)dbPath{
     return YES;
 }
 
