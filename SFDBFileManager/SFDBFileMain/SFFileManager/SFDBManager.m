@@ -8,6 +8,7 @@
 
 #import "SFDBManager.h"
 #import <sqlite3.h>
+#import "SFFileManager.h"
 @interface SFDBManager(){
     NSMutableDictionary *_dbDit;
 }
@@ -40,5 +41,10 @@ SFDBManager *m = nil;
 
 - (BOOL)db_close{
     return YES;
+}
+
+#pragma mark private method
+- (void)createDBInfoPlist{
+    [[SFFileManager shareInstance] sf_createFile:@"sfdb.plist" path:[[SFFileManager shareInstance] sf_getDocumentsPath]];
 }
 @end
