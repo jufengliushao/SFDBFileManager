@@ -14,10 +14,9 @@
 /**
  open dataBase with path
  if the .db or .sqlit not exist, the file will be created
-
- @param dbPath _Nonnull
+ 
  @return YES open-success NO open-fail
  */
-- (BOOL)db_openWithDocPath:(NSString *_Nonnull)dbPath;
+- (BOOL)db_open;
 - (BOOL)db_close;
 @end

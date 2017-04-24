@@ -9,8 +9,13 @@
 #import "SFDBManager.h"
 #import <sqlite3.h>
 #import "SFFileManager.h"
+
+#define kDATA_BASE_NAME @"sfdb.plist"
+
 @interface SFDBManager(){
     NSMutableDictionary *_dbDit;
+    sqlite3 *_db;
+    NSString *_filePath;
 }
 @end
 
@@ -30,12 +35,16 @@ SFDBManager *m = nil;
 - (instancetype)init{
     if (self = [super init]) {
         _dbDit = [NSMutableDictionary dictionaryWithCapacity:0];
+        _filePath = [[[SFFileManager shareInstance] sf_getDocumentsPath] stringByAppendingPathComponent:kDATA_BASE_NAME];
     }
     return self;
 }
 
 #pragma mark - public method
-- (BOOL)db_openWithDocPath:(NSString *)dbPath{
+- (BOOL)db_open{
+    if (_db) {
+        sqlite3_open([_filePath UTF8String], &_db);
+    }
     return YES;
 }
 
@@ -44,7 +53,9 @@ SFDBManager *m = nil;
 }
 
 #pragma mark private method
-- (void)createDBInfoPlist{
-    [[SFFileManager shareInstance] sf_createFile:@"sfdb.plist" path:[[SFFileManager shareInstance] sf_getDocumentsPath]];
+- (void)createDBInfoPlist:(NSString *_Nullable)dbPath{
+    if (_filePath) {
+        [[SFFileManager shareInstance] sf_createFile:kDATA_BASE_NAME path:_filePath];
+    }
 }
 @end
