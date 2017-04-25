@@ -58,4 +58,8 @@ SFDBManager *m = nil;
         [[SFFileManager shareInstance] sf_createFile:kDATA_BASE_NAME path:_filePath];
     }
 }
+
+- (NSString *)dbPath{
+    return _filePath;
+}
 @end

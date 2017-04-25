@@ -11,6 +11,8 @@
 @interface SFDBManager : NSObject
 + (instancetype _Nonnull)shareInstance;
 
+@property (nonatomic, copy, readonly) NSString *_Nonnull dbPath;
+
 /**
  open dataBase with path
  if the .db or .sqlit not exist, the file will be created
