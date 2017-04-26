@@ -42,8 +42,11 @@ SFDBManager *m = nil;
 
 #pragma mark - public method
 - (BOOL)db_open{
-    if (_db) {
-        sqlite3_open([_filePath UTF8String], &_db);
+    if (!_db) {
+        if (sqlite3_open([_filePath UTF8String], &_db) == SQLITE_OK) {
+            return YES;
+        }
+        return NO;
     }
     return YES;
 }

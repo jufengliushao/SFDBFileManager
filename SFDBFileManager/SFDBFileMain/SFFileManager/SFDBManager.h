@@ -11,6 +11,9 @@
 @interface SFDBManager : NSObject
 + (instancetype _Nonnull)shareInstance;
 
+/**
+ db-file path
+ */
 @property (nonatomic, copy, readonly) NSString *_Nonnull dbPath;
 
 /**
