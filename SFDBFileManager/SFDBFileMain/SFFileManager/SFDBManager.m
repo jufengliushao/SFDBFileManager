@@ -52,6 +52,9 @@ SFDBManager *m = nil;
 }
 
 - (BOOL)db_close{
+    if(_db){
+        return sqlite3_close(_db) == SQLITE_OK ? YES : NO;
+    }
     return YES;
 }
 
