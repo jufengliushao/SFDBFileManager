@@ -10,7 +10,8 @@
 #import <sqlite3.h>
 #import "SFFileManager.h"
 
-#define kDATA_BASE_NAME @"sfdb.plist"
+#define kDATA_BASE_NAME @"sfdb.db"
+#define kDATA_BASE_TABLE_NAME @"sfdbTable.plist"
 
 @interface SFDBManager(){
     NSMutableDictionary *_dbDit;
@@ -58,8 +59,11 @@ SFDBManager *m = nil;
     return YES;
 }
 
+- (BOOL)db_createSQLTable:(NSString *_Nullable)tableName andColumns:(NSDictionary *_Nullable)colDic{
+    return YES;
+}
 #pragma mark private method
-- (void)createDBInfoPlist:(NSString *_Nullable)dbPath{
+- (void)createDBFile:(NSString *_Nullable)dbPath{
     if (_filePath) {
         [[SFFileManager shareInstance] sf_createFile:kDATA_BASE_NAME path:_filePath];
     }
