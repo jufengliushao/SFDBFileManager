@@ -37,6 +37,7 @@ SFDBManager *m = nil;
     if (self = [super init]) {
         _dbDit = [NSMutableDictionary dictionaryWithCapacity:0];
         _filePath = [[[SFFileManager shareInstance] sf_getDocumentsPath] stringByAppendingPathComponent:kDATA_BASE_NAME];
+        [self existDBTablePlist];
     }
     return self;
 }
@@ -66,6 +67,15 @@ SFDBManager *m = nil;
 - (void)createDBFile:(NSString *_Nullable)dbPath{
     if (_filePath) {
         [[SFFileManager shareInstance] sf_createFile:kDATA_BASE_NAME path:_filePath];
+    }
+}
+
+- (void)existDBTablePlist{
+    NSString *tab_name_plist = [[[SFFileManager shareInstance] sf_getDocumentsPath] stringByAppendingPathComponent:kDATA_BASE_TABLE_NAME];
+    NSLog(@"%@", tab_name_plist);
+    if (![[SFFileManager shareInstance] sf_fileExist:tab_name_plist]) {
+        // file not exist, create the file
+        [[SFFileManager shareInstance] sf_createFile:tab_name_plist path:kDATA_BASE_TABLE_NAME];
     }
 }
 
