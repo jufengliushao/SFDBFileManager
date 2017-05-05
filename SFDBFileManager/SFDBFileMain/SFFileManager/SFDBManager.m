@@ -75,7 +75,9 @@ SFDBManager *m = nil;
     NSLog(@"%@", tab_name_plist);
     if (![[SFFileManager shareInstance] sf_fileExist:tab_name_plist]) {
         // file not exist, create the file
-        [[SFFileManager shareInstance] sf_createFile:tab_name_plist path:kDATA_BASE_TABLE_NAME];
+        [[SFFileManager shareInstance] sf_createFile:kDATA_BASE_TABLE_NAME path:tab_name_plist];
+    }else{
+        // read the plist data
     }
 }
 
