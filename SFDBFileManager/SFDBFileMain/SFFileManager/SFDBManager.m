@@ -74,10 +74,11 @@ SFDBManager *m = nil;
     NSString *tab_name_plist = [[[SFFileManager shareInstance] sf_getDocumentsPath] stringByAppendingPathComponent:kDATA_BASE_TABLE_NAME];
     NSLog(@"%@", tab_name_plist);
     if (![[SFFileManager shareInstance] sf_fileExist:tab_name_plist]) {
-        // file not exist, create the file
-        [[SFFileManager shareInstance] sf_createFile:kDATA_BASE_TABLE_NAME path:tab_name_plist];
+        // file not exist, copy the file
+        [[SFFileManager shareInstance] sf_copyBundleFile:kDATA_BASE_TABLE_NAME toPath:[[SFFileManager shareInstance] sf_getDocumentsPath]];
     }else{
         // read the plist data
+        _dbDit = [NSMutableDictionary dictionaryWithContentsOfFile:tab_name_plist];
     }
 }
 
