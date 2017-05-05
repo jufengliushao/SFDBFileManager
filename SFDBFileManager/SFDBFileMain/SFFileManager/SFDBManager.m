@@ -61,6 +61,10 @@ SFDBManager *m = nil;
 }
 
 - (BOOL)db_createSQLTable:(NSString *_Nullable)tableName andColumns:(NSDictionary *_Nullable)colDic{
+    if ([self db_open]) {
+        // db-opening
+        
+    }
     return YES;
 }
 #pragma mark private method
@@ -84,5 +88,9 @@ SFDBManager *m = nil;
 
 - (NSString *)dbPath{
     return _filePath;
+}
+
+- (BOOL)isexistTable:(NSString *_Nonnull)tableName{
+    return [_dbDit.allKeys containsObject:tableName] ? YES : NO;
 }
 @end
