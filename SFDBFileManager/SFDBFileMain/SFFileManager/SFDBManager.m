@@ -67,6 +67,21 @@ SFDBManager *m = nil;
     }
     return YES;
 }
+
+- (void)bd_sql:(NSString *_Nullable)sql complete:(void(^)(int complete, char *erro))complete{
+    char *error;
+    int com = -1; // db open fail
+    if ([self db_open]) {
+        // db-opening
+        if (sql) {
+            const char *sql_char = [sql UTF8String];
+            com = sqlite3_exec(_db, sql_char, NULL, NULL, &error);
+        }else{
+            com = -2; // sql is null
+        }
+    }
+    complete(com, error);
+}
 #pragma mark private method
 - (void)createDBFile:(NSString *_Nullable)dbPath{
     if (_filePath) {
