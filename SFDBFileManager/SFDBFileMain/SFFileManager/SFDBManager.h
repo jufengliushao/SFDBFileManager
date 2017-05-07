@@ -17,11 +17,19 @@
 @property (nonatomic, copy, readonly) NSString *_Nonnull dbPath;
 
 /**
- open dataBase with path
+ open dataBase
  if the .db or .sqlit not exist, the file will be created
  
  @return YES open-success NO open-fail
  */
 - (BOOL)db_open;
 - (BOOL)db_close;
+
+/**
+ <#Description#>
+
+ @param sql <#sql description#>
+ @param complete <#complete description#>
+ */
+- (void)bd_sql:(NSString *_Nullable)sql complete:(void(^)(int complete, char *erro))complete;
 @end
