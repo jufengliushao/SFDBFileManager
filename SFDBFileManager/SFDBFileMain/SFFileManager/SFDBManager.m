@@ -108,4 +108,12 @@ SFDBManager *m = nil;
 - (BOOL)isexistTable:(NSString *_Nonnull)tableName{
     return [_dbDit.allKeys containsObject:tableName] ? YES : NO;
 }
+
+- (NSString *)returnTableName:(NSString *_Nullable)sql{
+    NSString *table_name = nil;
+    if ([[sql uppercaseString] containsString:@"Table"]) {
+        
+    }
+    return table_name;
+}
 @end
