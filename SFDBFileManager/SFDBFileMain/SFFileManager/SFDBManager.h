@@ -31,5 +31,5 @@
  @param sql <#sql description#>
  @param complete <#complete description#>
  */
-- (void)bd_sql:(NSString *_Nullable)sql complete:(void(^)(int complete, char *erro))complete;
+- (void)bd_sql:(NSString *_Nullable)sql complete:(void(^)(int complete, char * _Nullable erro))complete;
 @end
