@@ -76,6 +76,9 @@ SFDBManager *m = nil;
         if (sql) {
             const char *sql_char = [sql UTF8String];
             com = sqlite3_exec(_db, sql_char, NULL, NULL, &error);
+            if (com == SQLITE_OK) {
+                [self returnTableName:sql];
+            }
         }else{
             com = -2; // sql is null
         }
@@ -111,8 +114,19 @@ SFDBManager *m = nil;
 
 - (NSString *)returnTableName:(NSString *_Nullable)sql{
     NSString *table_name = nil;
-    if ([[sql uppercaseString] containsString:@"Table"]) {
-        
+    NSString *upSQL = [sql uppercaseString];
+    if ([upSQL containsString:@"TABLE"]) {
+        NSArray *sub = [sql componentsSeparatedByString:@" "];
+        __block NSUInteger inde = -1;
+        [sub enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([[obj uppercaseString] isEqualToString:@"TABLE"]) {
+                inde = idx + 1;
+            }
+            if (idx == inde) {
+                *stop = YES;
+            }
+        }];
+        table_name = inde < sub.count ? sub[inde] : nil;
     }
     return table_name;
 }

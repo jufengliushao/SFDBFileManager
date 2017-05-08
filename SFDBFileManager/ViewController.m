@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[SFDBManager shareInstance] db_open];
-    [[SFDBManager shareInstance] bd_sql:@"create table User (id_User long, name varchar(100))" complete:^(int complete, char *erro) {
+    [[SFDBManager shareInstance] bd_sql:@"create table a (id int)" complete:^(int complete, char *erro) {
         NSLog(@"%d", complete);
     }];
 }
