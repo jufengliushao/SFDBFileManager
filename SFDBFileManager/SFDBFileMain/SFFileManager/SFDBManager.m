@@ -130,4 +130,17 @@ SFDBManager *m = nil;
     }
     return table_name;
 }
+
+- (void)saveORdeleteTableName:(NSString *_Nullable)sql{
+   NSString *tab_name_plist = [[[SFFileManager shareInstance] sf_getDocumentsPath] stringByAppendingPathComponent:kDATA_BASE_TABLE_NAME];
+    
+    NSString *tabel_name = [self returnTableName:sql];
+    if (!tabel_name) {
+        return;
+    }
+    
+    if (![_dbDit.allKeys containsObject:[self returnTableName:sql]]) {
+        
+    }
+}
 @end
