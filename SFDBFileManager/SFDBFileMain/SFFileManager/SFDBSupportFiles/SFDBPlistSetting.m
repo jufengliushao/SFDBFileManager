@@ -56,7 +56,9 @@ SFDBPlistSetting *plist_setting = nil;
     }
     
     if (![self haveKeyName:table_name]) {
-        
+        [self plist_addData:table_name];
+    }else{
+        [self plist_deleteData:table_name];
     }
 }
 
@@ -79,6 +81,15 @@ SFDBPlistSetting *plist_setting = nil;
     return table_name;
 }
 
+- (void)plist_addData:(NSString *_Nonnull)key{
+    [db_table_names setObject:key forKey:key];
+    [self resavePlist];
+}
+
+- (void)plist_deleteData:(NSString *_Nonnull)key{
+    [db_table_names removeObjectForKey:key];
+    [self resavePlist];
+}
 #pragma mark - private method
 - (void)readPlistData{
     db_table_names = [NSMutableDictionary dictionaryWithContentsOfFile:plist_path];
@@ -93,9 +104,7 @@ SFDBPlistSetting *plist_setting = nil;
     return NO;
 }
 
-- (void)plist_addData:(NSString *_Nonnull)key{
-    [db_table_names setObject:key forKey:key];
+- (void)resavePlist{
     [db_table_names writeToFile:plist_path atomically:YES];
 }
-
 @end

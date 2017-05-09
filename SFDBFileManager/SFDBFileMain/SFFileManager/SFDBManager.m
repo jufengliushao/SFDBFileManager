@@ -9,6 +9,7 @@
 #import "SFDBManager.h"
 #import <sqlite3.h>
 #import "SFFileManager.h"
+#import "SFDBPlistSetting.h"
 
 #define kDATA_BASE_NAME @"sfdb.db"
 #define kDATA_BASE_TABLE_NAME @"sfdbTable.plist"
@@ -37,7 +38,7 @@ SFDBManager *m = nil;
     if (self = [super init]) {
         _dbDit = [NSMutableDictionary dictionaryWithCapacity:0];
         _filePath = [[[SFFileManager shareInstance] sf_getDocumentsPath] stringByAppendingPathComponent:kDATA_BASE_NAME];
-        [self existDBTablePlist];
+        [SFDBPlistSetting shareInstance];
     }
     return self;
 }
@@ -77,7 +78,7 @@ SFDBManager *m = nil;
             const char *sql_char = [sql UTF8String];
             com = sqlite3_exec(_db, sql_char, NULL, NULL, &error);
             if (com == SQLITE_OK) {
-                [self returnTableName:sql];
+                [[SFDBPlistSetting shareInstance] plist_saveORdeleteTableName:sql];
             }
         }else{
             com = -2; // sql is null
@@ -92,55 +93,7 @@ SFDBManager *m = nil;
     }
 }
 
-- (void)existDBTablePlist{
-    NSString *tab_name_plist = [[[SFFileManager shareInstance] sf_getDocumentsPath] stringByAppendingPathComponent:kDATA_BASE_TABLE_NAME];
-    NSLog(@"%@", tab_name_plist);
-    if (![[SFFileManager shareInstance] sf_fileExist:tab_name_plist]) {
-        // file not exist, copy the file
-        [[SFFileManager shareInstance] sf_copyBundleFile:kDATA_BASE_TABLE_NAME toPath:[[SFFileManager shareInstance] sf_getDocumentsPath]];
-    }else{
-        // read the plist data
-        _dbDit = [NSMutableDictionary dictionaryWithContentsOfFile:tab_name_plist];
-    }
-}
-
 - (NSString *)dbPath{
     return _filePath;
-}
-
-- (BOOL)isexistTable:(NSString *_Nonnull)tableName{
-    return [_dbDit.allKeys containsObject:tableName] ? YES : NO;
-}
-
-- (NSString *)returnTableName:(NSString *_Nullable)sql{
-    NSString *table_name = nil;
-    NSString *upSQL = [sql uppercaseString];
-    if ([upSQL containsString:@"TABLE"]) {
-        NSArray *sub = [sql componentsSeparatedByString:@" "];
-        __block NSUInteger inde = -1;
-        [sub enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([[obj uppercaseString] isEqualToString:@"TABLE"]) {
-                inde = idx + 1;
-            }
-            if (idx == inde) {
-                *stop = YES;
-            }
-        }];
-        table_name = inde < sub.count ? sub[inde] : nil;
-    }
-    return table_name;
-}
-
-- (void)saveORdeleteTableName:(NSString *_Nullable)sql{
-   NSString *tab_name_plist = [[[SFFileManager shareInstance] sf_getDocumentsPath] stringByAppendingPathComponent:kDATA_BASE_TABLE_NAME];
-    
-    NSString *tabel_name = [self returnTableName:sql];
-    if (!tabel_name) {
-        return;
-    }
-    
-    if (![_dbDit.allKeys containsObject:[self returnTableName:sql]]) {
-        
-    }
 }
 @end

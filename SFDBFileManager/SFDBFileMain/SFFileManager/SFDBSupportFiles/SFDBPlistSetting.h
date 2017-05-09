@@ -6,8 +6,16 @@
 //  Copyright © 2017年 lsf. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SFDBBase.h"
 
-@interface SFDBPlistSetting : NSObject
-+ (instancetype)shareInstance;
+@interface SFDBPlistSetting : SFDBBase
++ (instancetype _Nonnull )shareInstance;
+
+
+/**
+ save or delete plist key
+
+ @param sql <#sql description#>
+ */
+- (void)plist_saveORdeleteTableName:(NSString *_Nullable)sql;
 @end
