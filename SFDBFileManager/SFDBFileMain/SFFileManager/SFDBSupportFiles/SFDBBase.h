@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface SFDBBase : NSObject
-
+- (void)queue_writePlist:(void(^)())operating;
+- (void)queue_readData:(void(^)())operating;
 @end

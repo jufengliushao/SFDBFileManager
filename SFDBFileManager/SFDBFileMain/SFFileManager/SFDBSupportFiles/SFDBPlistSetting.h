@@ -10,12 +10,12 @@
 
 @interface SFDBPlistSetting : SFDBBase
 + (instancetype _Nonnull )shareInstance;
-
-
 /**
  save or delete plist key
 
  @param sql <#sql description#>
  */
 - (void)plist_saveORdeleteTableName:(NSString *_Nullable)sql;
+
+@property (nonatomic, strong, readonly) NSArray *_Nullable currentTableNames;
 @end

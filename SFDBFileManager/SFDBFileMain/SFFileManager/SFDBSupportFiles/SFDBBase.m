@@ -15,5 +15,15 @@
 @end
 
 @implementation SFDBBase
+- (void)queue_writePlist:(void(^)())operating{
+    dispatch_barrier_sync(queue, ^{
+        operating();
+    });
+}
 
+- (void)queue_readData:(void(^)())operating{
+    dispatch_async(queue, ^{
+        operating();
+    });
+}
 @end

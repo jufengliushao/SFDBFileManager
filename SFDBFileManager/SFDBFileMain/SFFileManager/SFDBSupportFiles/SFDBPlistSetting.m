@@ -92,7 +92,9 @@ SFDBPlistSetting *plist_setting = nil;
 }
 #pragma mark - private method
 - (void)readPlistData{
-    db_table_names = [NSMutableDictionary dictionaryWithContentsOfFile:plist_path];
+    [self queue_readData:^{
+       db_table_names = [NSMutableDictionary dictionaryWithContentsOfFile:plist_path];
+    }];
 }
 
 - (BOOL)haveKeyName:(NSString *_Nullable)tableName{
@@ -105,6 +107,14 @@ SFDBPlistSetting *plist_setting = nil;
 }
 
 - (void)resavePlist{
-    [db_table_names writeToFile:plist_path atomically:YES];
+    [self queue_writePlist:^{
+        [db_table_names writeToFile:plist_path atomically:YES];
+    }];
+}
+
+#pragma mark - getter 
+- (NSArray *)currentTableNames{
+    [self readPlistData];
+    return db_table_names.allKeys;
 }
 @end
