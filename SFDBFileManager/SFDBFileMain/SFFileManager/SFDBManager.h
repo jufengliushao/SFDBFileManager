@@ -15,6 +15,9 @@
  db-file path
  */
 @property (nonatomic, copy, readonly) NSString *_Nonnull dbPath;
+/**
+ table-names
+ */
 @property (nonatomic, strong, readonly) NSArray *tableNames;
 
 /**
@@ -24,6 +27,11 @@
  @return YES open-success NO open-fail
  */
 - (BOOL)db_open;
+/**
+ clos dataBase
+
+ @return YES open-success NO open-fail
+ */
 - (BOOL)db_close;
 
 /**

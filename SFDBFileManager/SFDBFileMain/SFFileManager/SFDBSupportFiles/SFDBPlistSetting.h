@@ -17,5 +17,8 @@
  */
 - (void)plist_saveORdeleteTableName:(NSString *_Nullable)sql;
 
+/**
+ table-names
+ */
 @property (nonatomic, strong, readonly) NSArray *_Nullable currentTableNames;
 @end

@@ -9,6 +9,18 @@
 #import <Foundation/Foundation.h>
 
 @interface SFDBBase : NSObject
+
+/**
+ write queue
+
+ @param operating codes
+ */
 - (void)queue_writePlist:(void(^)())operating;
+
+/**
+ read queue
+
+ @param operating codes
+ */
 - (void)queue_readData:(void(^)())operating;
 @end
