@@ -10,4 +10,6 @@
 
 @interface SFDBSQL : SFDBBase
 
++ (instancetype)shareInstance;
+
 @end

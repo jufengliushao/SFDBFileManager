@@ -8,6 +8,24 @@
 
 #import "SFDBSQL.h"
 
+@interface SFDBSQL(){
+    
+}
+
+@end
+
+SFDBSQL *sql = nil;
+
 @implementation SFDBSQL
++(instancetype)shareInstance{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (!sql) {
+            sql = [[SFDBSQL alloc] init];
+        }
+    });
+    return sql;
+}
+
 
 @end
