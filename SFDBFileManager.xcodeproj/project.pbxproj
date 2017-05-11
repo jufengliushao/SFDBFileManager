@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E61F33BB1E8E43A200480504 /* q.plist in Resources */ = {isa = PBXBuildFile; fileRef = E61F33BA1E8E43A200480504 /* q.plist */; };
+		E6472F541EC4089E00C5D073 /* SFDBSQL.m in Sources */ = {isa = PBXBuildFile; fileRef = E6472F531EC4089E00C5D073 /* SFDBSQL.m */; };
 		E649CD7D1EC0103C002E386B /* SFDBPlistSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = E649CD7C1EC0103C002E386B /* SFDBPlistSetting.m */; };
 		E649CDC21EC15EB8002E386B /* SFDBBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E649CDC11EC15EB8002E386B /* SFDBBase.m */; };
 		E6AE58BE1E9CD339004E34F1 /* SFDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AE58BD1E9CD339004E34F1 /* SFDBManager.m */; };
@@ -43,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		E61F33BA1E8E43A200480504 /* q.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = q.plist; sourceTree = "<group>"; };
+		E6472F521EC4089E00C5D073 /* SFDBSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBSQL.h; sourceTree = "<group>"; };
+		E6472F531EC4089E00C5D073 /* SFDBSQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDBSQL.m; sourceTree = "<group>"; };
 		E649CD7B1EC0103C002E386B /* SFDBPlistSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBPlistSetting.h; sourceTree = "<group>"; };
 		E649CD7C1EC0103C002E386B /* SFDBPlistSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDBPlistSetting.m; sourceTree = "<group>"; };
 		E649CDC01EC15EB8002E386B /* SFDBBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBBase.h; sourceTree = "<group>"; };
@@ -104,6 +107,8 @@
 				E649CDC11EC15EB8002E386B /* SFDBBase.m */,
 				E649CD7B1EC0103C002E386B /* SFDBPlistSetting.h */,
 				E649CD7C1EC0103C002E386B /* SFDBPlistSetting.m */,
+				E6472F521EC4089E00C5D073 /* SFDBSQL.h */,
+				E6472F531EC4089E00C5D073 /* SFDBSQL.m */,
 			);
 			path = SFDBSupportFiles;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				E6CB32431E7A1AF1001368C2 /* ViewController.m in Sources */,
 				E6CB32401E7A1AF1001368C2 /* AppDelegate.m in Sources */,
 				E649CD7D1EC0103C002E386B /* SFDBPlistSetting.m in Sources */,
+				E6472F541EC4089E00C5D073 /* SFDBSQL.m in Sources */,
 				E6CB32731E7A1B73001368C2 /* SFFileManager.m in Sources */,
 				E649CDC21EC15EB8002E386B /* SFDBBase.m in Sources */,
 				E6CB323D1E7A1AF1001368C2 /* main.m in Sources */,

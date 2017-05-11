@@ -78,7 +78,7 @@ SFDBManager *m = nil;
             const char *sql_char = [sql UTF8String];
             com = sqlite3_exec(_db, sql_char, NULL, NULL, &error);
             if (com == SQLITE_OK) {
-                [[SFDBPlistSetting shareInstance] plist_saveORdeleteTableName:sql];
+                
             }
         }else{
             com = -2; // sql is null
@@ -99,5 +99,12 @@ SFDBManager *m = nil;
 
 - (NSArray *)tableNames{
     return [SFDBPlistSetting shareInstance].currentTableNames;
+}
+
+- (void)delievePartmentWithSQL:(NSString *_Nonnull)sql{
+    if ([[sql uppercaseString] containsString:@"TABLE"]) {
+        // 对table create drop
+        [[SFDBPlistSetting shareInstance] plist_saveORdeleteTableName:sql];
+    }
 }
 @end
