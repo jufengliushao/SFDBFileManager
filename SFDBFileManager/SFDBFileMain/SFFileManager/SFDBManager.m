@@ -96,4 +96,8 @@ SFDBManager *m = nil;
 - (NSString *)dbPath{
     return _filePath;
 }
+
+- (NSArray *)tableNames{
+    return [SFDBPlistSetting shareInstance].currentTableNames;
+}
 @end

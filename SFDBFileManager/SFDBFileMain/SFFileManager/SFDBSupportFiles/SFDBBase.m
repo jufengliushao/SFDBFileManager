@@ -15,6 +15,13 @@
 @end
 
 @implementation SFDBBase
+- (instancetype)init{
+    if (self = [super init]) {
+        queue = dispatch_queue_create("sfdbQueue.read.write.com", DISPATCH_QUEUE_CONCURRENT);
+    }
+    return self;
+}
+
 - (void)queue_writePlist:(void(^)())operating{
     dispatch_barrier_sync(queue, ^{
         operating();

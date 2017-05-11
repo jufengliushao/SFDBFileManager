@@ -19,7 +19,6 @@
     [super viewDidLoad];
     [[SFDBManager shareInstance] db_open];
     [[SFDBManager shareInstance] bd_sql:@"create table b (id int)" complete:^(int complete, char *erro) {
-        NSLog(@"%d", complete);
     }];
     NSLog(@"%@", [[SFFileManager shareInstance] sf_getDocumentsPath]);
 }

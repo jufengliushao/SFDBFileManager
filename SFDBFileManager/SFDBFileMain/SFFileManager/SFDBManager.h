@@ -15,6 +15,7 @@
  db-file path
  */
 @property (nonatomic, copy, readonly) NSString *_Nonnull dbPath;
+@property (nonatomic, strong, readonly) NSArray *tableNames;
 
 /**
  open dataBase
