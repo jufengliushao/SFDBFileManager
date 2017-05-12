@@ -11,9 +11,9 @@
 #define kDATA_BASE_TABLE_NAME @"sfdbTable.plist"
 
 typedef NS_ENUM (NSInteger, SF_TABLE_OPERAT_TYPE){
+    SF_NONE_TABLE,
     SF_CREATE_TABLE,
-    SF_DROP_TABLE,
-    SF_NONE_TABLE
+    SF_DROP_TABLE
 };
 
 @interface SFDBPlistSetting(){
@@ -62,9 +62,9 @@ SFDBPlistSetting *plist_setting = nil;
         return;
     }
     
-    if (![self haveKeyName:table_name]) {
+    if ([self isCreateTable:sql] == SF_CREATE_TABLE) {
         [self plist_addData:table_name];
-    }else{
+    }else if([self isCreateTable:sql] == SF_DROP_TABLE){
         [self plist_deleteData:table_name];
     }
 }
