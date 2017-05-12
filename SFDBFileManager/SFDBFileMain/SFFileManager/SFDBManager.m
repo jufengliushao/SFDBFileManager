@@ -78,7 +78,7 @@ SFDBManager *m = nil;
             const char *sql_char = [sql UTF8String];
             com = sqlite3_exec(_db, sql_char, NULL, NULL, &error);
             if (com == SQLITE_OK) {
-                
+                [self delievePartmentWithSQL:sql];
             }
         }else{
             com = -2; // sql is null

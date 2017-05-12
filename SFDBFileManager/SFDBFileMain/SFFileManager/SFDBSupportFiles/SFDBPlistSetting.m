@@ -9,6 +9,13 @@
 #import "SFDBPlistSetting.h"
 #import "SFFileManager.h"
 #define kDATA_BASE_TABLE_NAME @"sfdbTable.plist"
+
+typedef NS_ENUM (NSInteger, SF_TABLE_OPERAT_TYPE){
+    SF_CREATE_TABLE,
+    SF_DROP_TABLE,
+    SF_NONE_TABLE
+};
+
 @interface SFDBPlistSetting(){
     NSMutableDictionary *db_table_names;
     NSString *plist_path;
@@ -112,6 +119,15 @@ SFDBPlistSetting *plist_setting = nil;
     }];
 }
 
+- (SF_TABLE_OPERAT_TYPE)isCreateTable:(NSString *_Nonnull)sql{
+    NSString *SQL = [sql uppercaseString];
+    if ([SQL containsString:@"DROP"]) {
+        return SF_DROP_TABLE;
+    }else if ([SQL containsString:@"CREATE"]){
+        return SF_CREATE_TABLE;
+    }
+    return SF_NONE_TABLE;
+}
 #pragma mark - getter 
 - (NSArray *)currentTableNames{
     [self readPlistData];
