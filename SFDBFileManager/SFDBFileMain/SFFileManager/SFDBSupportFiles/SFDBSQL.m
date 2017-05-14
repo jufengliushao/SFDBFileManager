@@ -27,5 +27,7 @@ SFDBSQL *sql = nil;
     return sql;
 }
 
-
+- (BOOL)sql_createTableName:(NSString *_Nonnull)tableName cols:(NSDictionary *_Nonnull)cols{
+    return YES;
+}
 @end

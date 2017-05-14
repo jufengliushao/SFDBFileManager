@@ -10,6 +10,15 @@
 
 @interface SFDBSQL : SFDBBase
 
-+ (instancetype)shareInstance;
++ (instancetype _Nonnull )shareInstance;
 
+/**
+ create table
+
+ @param tableName   string    table-name
+ @param             cols       cols keys
+                        {@"name":@"varchar(20)"}
+ @return YES complete
+ */
+- (BOOL)sql_createTableName:(NSString *_Nonnull)tableName cols:(NSDictionary *_Nonnull)cols;
 @end
