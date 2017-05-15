@@ -38,6 +38,10 @@ SFDBSQL *sql = nil;
     return com;
 }
 
+- (BOOL)sql_dropTable:(NSString *_Nonnull)tableName{
+    return YES;
+}
+
 #pragma mark - private method
 - (__kindof NSString *_Nullable)returnCreateTableSQL:(NSString *_Nonnull)tb keys:(NSDictionary *_Nonnull)keys{
     NSString *sql = [NSString stringWithFormat:@"create table %@", tb];
