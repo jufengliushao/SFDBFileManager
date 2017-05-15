@@ -27,7 +27,10 @@ SFDBSQL *sql = nil;
     return sql;
 }
 
+#pragma mark - public method
 - (BOOL)sql_createTableName:(NSString *_Nonnull)tableName cols:(NSDictionary *_Nonnull)cols{
     return YES;
 }
+
+#pragma mark - private method
 @end
