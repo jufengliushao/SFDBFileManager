@@ -19,10 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[SFDBManager shareInstance] db_open];
-    [[SFDBSQL shareInstance] sql_createTableName:@"a" cols:@{
+    [[SFDBSQL shareInstance] sql_createTableName:@"c" cols:@{
                                                              @"name": @"varchar(20)",
                                                              @"age": @"int"
                                                              }];
+    NSLog(@"%@", [[SFFileManager shareInstance] sf_getDocumentsPath]);
 }
 
 

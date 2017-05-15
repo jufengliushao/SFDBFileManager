@@ -7,7 +7,7 @@
 //
 
 #import "SFDBSQL.h"
-
+#import "SFDBManager.h"
 @interface SFDBSQL(){
     
 }
@@ -29,21 +29,33 @@ SFDBSQL *sql = nil;
 
 #pragma mark - public method
 - (BOOL)sql_createTableName:(NSString *_Nonnull)tableName cols:(NSDictionary *_Nonnull)cols{
-    NSLog(@"%@", [self returnCreateTableSQL:tableName keys:cols]);
-    return YES;
+    __block BOOL com = YES;
+    
+    [[SFDBManager shareInstance] db_sql:[self returnCreateTableSQL:tableName keys:cols] complete:^(int complete, char * _Nullable erro) {
+        com = complete;
+    }];
+    
+    return com;
 }
 
 #pragma mark - private method
 - (__kindof NSString *_Nullable)returnCreateTableSQL:(NSString *_Nonnull)tb keys:(NSDictionary *_Nonnull)keys{
-    NSArray *key = keys.allKeys;
     NSString *sql = [NSString stringWithFormat:@"create table %@", tb];
+    
+    return [NSString stringWithFormat:@"%@%@", sql, [self returncols:keys]];
+}
+
+- (__kindof NSString *_Nonnull)returncols:(NSDictionary *_Nonnull)dic{
+    NSArray *key = dic.allKeys;
     NSMutableString *cols = [NSMutableString string];
+    
     for (NSString *col in key) {
-        [cols appendString:[NSString stringWithFormat:@" %@ %@, ", col, keys[col]]];
+        [cols appendString:[NSString stringWithFormat:@" %@ %@, ", col, dic[col]]];
     }
-    [cols deleteCharactersInRange:NSMakeRange(cols.length - 2, 2)];
-    [cols insertString:@" (" atIndex:0];
-    [cols insertString:@")" atIndex:cols.length];
-    return [NSString stringWithFormat:@"%@%@", sql, cols];
+    
+    [cols deleteCharactersInRange:NSMakeRange(cols.length - 2, 2)]; // delete last ,
+    [cols insertString:@" (" atIndex:0]; // add (
+    [cols insertString:@")" atIndex:cols.length]; // add )
+    return cols;
 }
 @end

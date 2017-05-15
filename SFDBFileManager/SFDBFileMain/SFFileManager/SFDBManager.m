@@ -69,14 +69,16 @@ SFDBManager *m = nil;
     return YES;
 }
 
-- (void)bd_sql:(NSString *_Nullable)sql complete:(void(^)(int complete, char *erro))complete{
-    char *error;
-    int com = -1; // db open fail
+- (void)db_sql:(NSString *_Nullable)sql complete:(void(^)(int complete, char *erro))complete{
+    char *error = NULL;
+    __block int com = -1; // db open fail
     if ([self db_open]) {
         // db-opening
         if (sql) {
             const char *sql_char = [sql UTF8String];
-            com = sqlite3_exec(_db, sql_char, NULL, NULL, &error);
+            [self queue_writePlist:^{
+                com = sqlite3_exec(_db, sql_char, NULL, NULL, &error);
+            }];
             if (com == SQLITE_OK) {
                 [self delievePartmentWithSQL:sql];
             }

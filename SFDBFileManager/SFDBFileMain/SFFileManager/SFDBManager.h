@@ -6,9 +6,9 @@
 //  Copyright © 2017年 lsf. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SFDBBase.h"
 
-@interface SFDBManager : NSObject
+@interface SFDBManager : SFDBBase
 + (instancetype _Nonnull)shareInstance;
 
 /**
@@ -40,5 +40,5 @@
  @param sql <#sql description#>
  @param complete <#complete description#>
  */
-- (void)bd_sql:(NSString *_Nullable)sql complete:(void(^_Nullable)(int complete, char * _Nullable erro))complete;
+- (void)db_sql:(NSString *_Nullable)sql complete:(void(^_Nullable)(int complete, char * _Nullable erro))complete;
 @end
