@@ -29,8 +29,21 @@ SFDBSQL *sql = nil;
 
 #pragma mark - public method
 - (BOOL)sql_createTableName:(NSString *_Nonnull)tableName cols:(NSDictionary *_Nonnull)cols{
+    NSLog(@"%@", [self returnCreateTableSQL:tableName keys:cols]);
     return YES;
 }
 
 #pragma mark - private method
+- (__kindof NSString *_Nullable)returnCreateTableSQL:(NSString *_Nonnull)tb keys:(NSDictionary *_Nonnull)keys{
+    NSArray *key = keys.allKeys;
+    NSString *sql = [NSString stringWithFormat:@"create table %@", tb];
+    NSMutableString *cols = [NSMutableString string];
+    for (NSString *col in key) {
+        [cols appendString:[NSString stringWithFormat:@" %@ %@, ", col, keys[col]]];
+    }
+    [cols deleteCharactersInRange:NSMakeRange(cols.length - 2, 2)];
+    [cols insertString:@" (" atIndex:0];
+    [cols insertString:@")" atIndex:cols.length];
+    return [NSString stringWithFormat:@"%@%@", sql, cols];
+}
 @end

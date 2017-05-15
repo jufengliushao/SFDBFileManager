@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "SFFileManager.h"
 #import "SFDBManager.h"
+#import "SFDBSQL.h"
 @interface ViewController ()
 
 @end
@@ -18,9 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[SFDBManager shareInstance] db_open];
-    [[SFDBManager shareInstance] bd_sql:@"create table b (id int)" complete:^(int complete, char *erro) {
-    }];
-    NSLog(@"%@", [[SFFileManager shareInstance] sf_getDocumentsPath]);
+    [[SFDBSQL shareInstance] sql_createTableName:@"a" cols:@{
+                                                             @"name": @"varchar(20)",
+                                                             @"age": @"int"
+                                                             }];
 }
 
 
