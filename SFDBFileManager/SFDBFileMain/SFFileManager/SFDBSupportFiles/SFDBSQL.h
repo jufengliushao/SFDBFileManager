@@ -21,4 +21,12 @@
  @return YES complete
  */
 - (BOOL)sql_createTableName:(NSString *_Nonnull)tableName cols:(NSDictionary *_Nonnull)cols;
+
+/**
+ delete table
+
+ @param tableName table-name
+ @return <#return value description#>
+ */
+- (BOOL)sql_dropTable:(NSString *_Nonnull)tableName;
 @end
