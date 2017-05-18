@@ -97,6 +97,13 @@ SFDBPlistSetting *plist_setting = nil;
     [db_table_names removeObjectForKey:key];
     [self resavePlist];
 }
+
+- (BOOL)plist_containTableName:(NSString *_Nonnull)tableName{
+    if ([self.currentTableNames containsObject:tableName]) {
+        return YES;
+    }
+    return NO;
+}
 #pragma mark - private method
 - (void)readPlistData{
     [self queue_readData:^{

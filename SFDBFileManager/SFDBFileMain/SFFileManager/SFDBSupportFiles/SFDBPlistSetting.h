@@ -21,4 +21,12 @@
  table-names
  */
 @property (nonatomic, strong, readonly) NSArray *_Nullable currentTableNames;
+
+/**
+ return table-name is exist
+
+ @param tableName <#tableName description#>
+ @return <#return value description#>
+ */
+- (BOOL)plist_containTableName:(NSString *_Nonnull)tableName;
 @end
