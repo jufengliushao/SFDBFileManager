@@ -28,7 +28,7 @@ SFDBSQL *sql = nil;
 }
 
 #pragma mark - public method
-- (BOOL)sql_createTableName:(NSString *_Nonnull)tableName model:(__kindof NSObject *)model{
+- (BOOL)sql_createTableName:(NSString *_Nonnull)tableName cols:(NSDictionary *_Nonnull)cols{
     __block BOOL com = YES;
     
     [[SFDBManager shareInstance] db_sql:[self returnCreateTableSQL:tableName keys:cols] complete:^(int complete, char * _Nullable erro) {
