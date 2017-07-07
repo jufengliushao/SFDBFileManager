@@ -10,15 +10,17 @@
 
 @interface SFDBManager : SFDBBase
 + (instancetype _Nonnull)shareInstance;
-
 /**
- db-file path
+ * db-file path
+ * 数据库文件路径
  */
 @property (nonatomic, copy, readonly) NSString *_Nonnull dbPath;
+
 /**
- table-names
+ * table-names
+ * 表名数组
  */
-@property (nonatomic, strong, readonly) NSArray *tableNames;
+@property (nonatomic, strong, readonly) NSArray *_Nullable tableNames;
 
 /**
  open dataBase
@@ -26,19 +28,22 @@
  
  @return YES open-success NO open-fail
  */
-- (BOOL)db_open;
+- (BOOL)sf_db_open;
 /**
  clos dataBase
 
  @return YES open-success NO open-fail
  */
-- (BOOL)db_close;
+- (BOOL)sf_db_close;
 
 /**
- <#Description#>
-
- @param sql <#sql description#>
- @param complete <#complete description#>
+ add data with model
+ * 表格不存在创建表格 按照第一个model进行创建列
+ * 数据数组为空，不创建表格
+ * 
+ 
+ @param models <#models description#>
+ @param tableName <#tableName description#>
  */
-- (void)db_sql:(NSString *_Nullable)sql complete:(void(^_Nullable)(int complete, char * _Nullable erro))complete;
+- (void)sf_inseartData:(NSArray <__kindof NSObject *>*_Nullable)models intoTable:(NSString *_Nonnull)tableName;
 @end
