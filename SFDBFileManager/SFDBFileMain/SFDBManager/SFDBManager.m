@@ -61,13 +61,23 @@ SFDBManager *m = nil;
 }
 
 - (void)sf_createTable:(NSString *)tableName modelClass:(Class)model{
-    if (!tableName || !model) {
-        // 条件不满足 class为空 or 表名为空
+    if (!tableName || !model ||  [[SFDBPlistSetting shareInstance] plist_containTableName:tableName]) {
+        // 条件不满足 class为空 or 表名为空 or 表明存在
+        return;
+    }
+    
+    if (![self returnDbOpen]) {
+        // 数据库打开失败
+        SFLog(@"数据库打开失败，请检查！");
         return;
     }
     
     NSString *sql = [[SFDBSQL shareInstance] sql_returnTableName:tableName cols:[[[model alloc] init] allPropertyNames]];
-    NSLog(@"%@", sql);
+    [self queue_writePlist:^{
+        if ([_db executeStatements:sql]) {
+            [[SFDBPlistSetting shareInstance] plist_saveTableName:tableName];
+        }
+    }];
 }
 
 - (void)sf_inseartData:(NSArray<__kindof NSObject *> *)models intoTable:(NSString *)tableName{
@@ -100,5 +110,18 @@ SFDBManager *m = nil;
 
 - (NSArray *)tableNames{
     return [SFDBPlistSetting shareInstance].currentTableNames;
+}
+
+
+/**
+ 判断数据库是否打开，没有打开，进行打开
+
+ @return <#return value description#>
+ */
+- (BOOL)returnDbOpen{
+    if (!_db.open) {
+        return [_db open];
+    }
+    return YES;
 }
 @end

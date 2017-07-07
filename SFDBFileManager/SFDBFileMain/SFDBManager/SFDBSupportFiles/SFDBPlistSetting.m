@@ -16,7 +16,7 @@ typedef NS_ENUM (NSInteger, SF_TABLE_OPERAT_TYPE){
 };
 
 @interface SFDBPlistSetting(){
-    NSMutableDictionary *db_table_names;
+    NSMutableArray *db_table_names;
     NSString *plist_path;
 }
 @end
@@ -66,12 +66,12 @@ SFDBPlistSetting *plist_setting = nil;
 
 - (void)readPlistData{
     [self queue_readData:^{
-       db_table_names = [NSMutableDictionary dictionaryWithContentsOfFile:plist_path];
+       db_table_names = [NSMutableArray arrayWithContentsOfFile:plist_path];
     }];
 }
 #pragma mark - getter 
 - (NSArray *)currentTableNames{
     [self readPlistData];
-    return db_table_names.allKeys;
+    return db_table_names;
 }
 @end
