@@ -7,10 +7,10 @@
 //
 
 #import "SFDBManager.h"
-#import <sqlite3.h>
 #import "SFFileManager.h"
 #import "SFDBPlistSetting.h"
 #import "FMDB.h"
+#import "SFDBSQL.h"
 
 @interface SFDBManager(){
     FMDatabase *_db;
@@ -60,10 +60,26 @@ SFDBManager *m = nil;
     }
 }
 
+- (void)sf_createTable:(NSString *)tableName modelClass:(Class)model{
+    if (!tableName || !model) {
+        // 条件不满足 class为空 or 表名为空
+        return;
+    }
+    
+    NSString *sql = [[SFDBSQL shareInstance] sql_returnTableName:tableName cols:[[[model alloc] init] allPropertyNames]];
+    NSLog(@"%@", sql);
+}
+
 - (void)sf_inseartData:(NSArray<__kindof NSObject *> *)models intoTable:(NSString *)tableName{
+    
+    if (!models.count || !tableName) {
+        // 条件不满足 数据为空 or 表名为空
+        return;
+    }
+    
     if (![[SFDBPlistSetting shareInstance] plist_containTableName:tableName]) {
         // no exist the table-name
-        
+        [self sf_createTable:tableName modelClass:[models[0] class]]; // create table
     }
 }
 

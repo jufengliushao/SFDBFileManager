@@ -19,6 +19,9 @@
 		E63A33841F0F1D0C00C400BD /* SFDBPlistSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A337E1F0F1D0C00C400BD /* SFDBPlistSetting.m */; };
 		E63A33851F0F1D0C00C400BD /* SFDBSQL.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A33801F0F1D0C00C400BD /* SFDBSQL.m */; };
 		E63A33861F0F1D0C00C400BD /* SF_PLIST_TABLENAME.plist in Resources */ = {isa = PBXBuildFile; fileRef = E63A33811F0F1D0C00C400BD /* SF_PLIST_TABLENAME.plist */; };
+		E63A338E1F0F329100C400BD /* NSObject+SFObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A338B1F0F329100C400BD /* NSObject+SFObject.m */; };
+		E63A338F1F0F329100C400BD /* NSString+SFString.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A338D1F0F329100C400BD /* NSString+SFString.m */; };
+		E63A33921F0F361600C400BD /* StudentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A33911F0F361600C400BD /* StudentModel.m */; };
 		E6AE58C11EA06C8C004E34F1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AE58C01EA06C8C004E34F1 /* libsqlite3.tbd */; };
 		E6CB323D1E7A1AF1001368C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CB323C1E7A1AF1001368C2 /* main.m */; };
 		E6CB32401E7A1AF1001368C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CB323F1E7A1AF1001368C2 /* AppDelegate.m */; };
@@ -73,6 +76,12 @@
 		E63A33811F0F1D0C00C400BD /* SF_PLIST_TABLENAME.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SF_PLIST_TABLENAME.plist; sourceTree = "<group>"; };
 		E63A33871F0F1FE900C400BD /* SFDBKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBKeys.h; sourceTree = "<group>"; };
 		E63A33881F0F204E00C400BD /* SFDBFileManagerPCH.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBFileManagerPCH.pch; sourceTree = "<group>"; };
+		E63A338A1F0F329100C400BD /* NSObject+SFObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SFObject.h"; sourceTree = "<group>"; };
+		E63A338B1F0F329100C400BD /* NSObject+SFObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SFObject.m"; sourceTree = "<group>"; };
+		E63A338C1F0F329100C400BD /* NSString+SFString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SFString.h"; sourceTree = "<group>"; };
+		E63A338D1F0F329100C400BD /* NSString+SFString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SFString.m"; sourceTree = "<group>"; };
+		E63A33901F0F361600C400BD /* StudentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentModel.h; sourceTree = "<group>"; };
+		E63A33911F0F361600C400BD /* StudentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentModel.m; sourceTree = "<group>"; };
 		E6AE58C01EA06C8C004E34F1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E6CB32381E7A1AF1001368C2 /* SFDBFileManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFDBFileManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CB323C1E7A1AF1001368C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -152,6 +161,17 @@
 			path = SFDBSupportFiles;
 			sourceTree = "<group>";
 		};
+		E63A33891F0F329100C400BD /* SFHelperTool */ = {
+			isa = PBXGroup;
+			children = (
+				E63A338A1F0F329100C400BD /* NSObject+SFObject.h */,
+				E63A338B1F0F329100C400BD /* NSObject+SFObject.m */,
+				E63A338C1F0F329100C400BD /* NSString+SFString.h */,
+				E63A338D1F0F329100C400BD /* NSString+SFString.m */,
+			);
+			path = SFHelperTool;
+			sourceTree = "<group>";
+		};
 		E6AE58BF1EA06C8B004E34F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +209,8 @@
 				E6CB323F1E7A1AF1001368C2 /* AppDelegate.m */,
 				E6CB32411E7A1AF1001368C2 /* ViewController.h */,
 				E6CB32421E7A1AF1001368C2 /* ViewController.m */,
+				E63A33901F0F361600C400BD /* StudentModel.h */,
+				E63A33911F0F361600C400BD /* StudentModel.m */,
 				E63A33881F0F204E00C400BD /* SFDBFileManagerPCH.pch */,
 				E61F33BA1E8E43A200480504 /* q.plist */,
 				E6CB32441E7A1AF1001368C2 /* Main.storyboard */,
@@ -239,6 +261,7 @@
 		E6CB326F1E7A1B65001368C2 /* SFDBManager */ = {
 			isa = PBXGroup;
 			children = (
+				E63A33891F0F329100C400BD /* SFHelperTool */,
 				E63A33781F0F1D0C00C400BD /* SFDBManager.h */,
 				E63A33791F0F1D0C00C400BD /* SFDBManager.m */,
 				E63A33871F0F1FE900C400BD /* SFDBKeys.h */,
@@ -395,6 +418,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6CB32431E7A1AF1001368C2 /* ViewController.m in Sources */,
+				E63A33921F0F361600C400BD /* StudentModel.m in Sources */,
+				E63A338E1F0F329100C400BD /* NSObject+SFObject.m in Sources */,
 				E63A33851F0F1D0C00C400BD /* SFDBSQL.m in Sources */,
 				E6CB32401E7A1AF1001368C2 /* AppDelegate.m in Sources */,
 				E63A33841F0F1D0C00C400BD /* SFDBPlistSetting.m in Sources */,
@@ -407,6 +432,7 @@
 				E63A33831F0F1D0C00C400BD /* SFDBBase.m in Sources */,
 				E6CB323D1E7A1AF1001368C2 /* main.m in Sources */,
 				E63A33731F0F1CCD00C400BD /* FMDatabaseAdditions.m in Sources */,
+				E63A338F1F0F329100C400BD /* NSString+SFString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

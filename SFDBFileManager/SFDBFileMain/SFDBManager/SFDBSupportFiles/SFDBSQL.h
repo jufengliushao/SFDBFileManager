@@ -13,14 +13,13 @@
 + (instancetype _Nonnull )shareInstance;
 
 /**
- create table
+ 返回创建表的sql
 
- @param tableName   string    table-name
- @param             cols       cols keys
-                        {@"name":@"varchar(20)"}
- @return YES complete
+ @param tableName 表名
+ @param cols 列字段数组
+ @return sql
  */
-- (BOOL)sql_createTableName:(NSString *_Nonnull)tableName cols:(NSDictionary *_Nonnull)cols;
+- (NSString *_Nullable)sql_returnTableName:(NSString *_Nonnull)tableName cols:(NSArray *_Nonnull)cols;
 
 /**
  delete table

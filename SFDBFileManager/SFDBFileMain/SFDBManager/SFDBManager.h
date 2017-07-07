@@ -33,6 +33,18 @@
 - (void)sf_db_close;
 
 /**
+ 创建表
+ create the table-name
+ 
+ * only support to create once with the same table-name
+ * 仅支持一次创建，后序无法添加，如果需要添加请先删除后操作
+ 
+ @param tableName table-name
+ @param model model 对应的数据表格的model
+ */
+- (void)sf_createTable:(NSString *_Nonnull)tableName modelClass:(Class _Nonnull)model;
+
+/**
  add data with model
  * 表格不存在创建表格 按照第一个model进行创建列
  * 数据数组为空，不创建表格

@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "SFFileManager.h"
 #import "SFDBManager.h"
+
+#import "StudentModel.h"
 @interface ViewController ()
 
 @end
@@ -17,7 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSObject *obj = [[NSObject alloc] init];
+    StudentModel *obj = [[StudentModel alloc] init];
+    obj.name = @"xiaoming";
     [[SFDBManager shareInstance] sf_inseartData:@[obj] intoTable:@"a"];
     NSLog(@"%@", [[SFFileManager shareInstance] sf_getDocumentsPath]);
 }
