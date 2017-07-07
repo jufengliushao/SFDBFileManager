@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "SFFileManager.h"
 #import "SFDBManager.h"
-#import "SFDBSQL.h"
 @interface ViewController ()
 
 @end
@@ -18,11 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[SFDBManager shareInstance] sf_db_open];
-    [[SFDBSQL shareInstance] sql_createTableName:@"c" cols:@{
-                                                             @"name": @"varchar(20)",
-                                                             @"age": @"int"
-                                                             }];
+    NSObject *obj = [[NSObject alloc] init];
+    [[SFDBManager shareInstance] sf_inseartData:@[obj] intoTable:@"a"];
     NSLog(@"%@", [[SFFileManager shareInstance] sf_getDocumentsPath]);
 }
 

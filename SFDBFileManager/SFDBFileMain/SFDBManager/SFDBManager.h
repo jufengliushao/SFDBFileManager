@@ -25,16 +25,12 @@
 /**
  open dataBase
  if the .db or .sqlit not exist, the file will be created
- 
- @return YES open-success NO open-fail
  */
-- (BOOL)sf_db_open;
+- (void)sf_db_open;
 /**
  clos dataBase
-
- @return YES open-success NO open-fail
  */
-- (BOOL)sf_db_close;
+- (void)sf_db_close;
 
 /**
  add data with model
