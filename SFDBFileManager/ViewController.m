@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[SFDBManager shareInstance] db_open];
+    [[SFDBManager shareInstance] sf_db_open];
     [[SFDBSQL shareInstance] sql_createTableName:@"c" cols:@{
                                                              @"name": @"varchar(20)",
                                                              @"age": @"int"

@@ -23,7 +23,7 @@
 }
 
 - (void)queue_writePlist:(void(^)())operating{
-    dispatch_barrier_sync(queue, ^{
+    dispatch_barrier_async(queue, ^{
         operating();
     });
 }

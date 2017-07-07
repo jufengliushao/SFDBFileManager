@@ -10,14 +10,16 @@
 #import <sqlite3.h>
 #import "SFFileManager.h"
 #import "SFDBPlistSetting.h"
+#import "FMDB.h"
 
 #define kDATA_BASE_NAME @"sfdb.db"
 #define kDATA_BASE_TABLE_NAME @"sfdbTable.plist"
 
 @interface SFDBManager(){
     NSMutableDictionary *_dbDit;
-    sqlite3 *_db;
-    NSString *_filePath;
+    SFDBBase *_db;
+    NSString *_db_filePath; // 数据库文件地址
+    NSString *_plist_filePath; // plist 文件地址
 }
 @end
 
@@ -44,7 +46,7 @@ SFDBManager *m = nil;
 }
 
 #pragma mark - public method
-- (BOOL)db_open{
+- (BOOL)sf_db_open{
     if (!_db) {
         if (sqlite3_open([_filePath UTF8String], &_db) == SQLITE_OK) {
             return YES;
@@ -54,7 +56,7 @@ SFDBManager *m = nil;
     return YES;
 }
 
-- (BOOL)db_close{
+- (BOOL)sf_db_close{
     if(_db){
         return sqlite3_close(_db) == SQLITE_OK ? YES : NO;
     }
@@ -62,7 +64,7 @@ SFDBManager *m = nil;
 }
 
 - (BOOL)db_createSQLTable:(NSString *_Nullable)tableName andColumns:(NSDictionary *_Nullable)colDic{
-    if ([self db_open]) {
+    if ([self sf_db_open]) {
         // db-opening
         
     }
@@ -72,7 +74,7 @@ SFDBManager *m = nil;
 - (void)db_sql:(NSString *_Nullable)sql complete:(void(^)(int complete, char *erro))complete{
     char *error = NULL;
     __block int com = -1; // db open fail
-    if ([self db_open]) {
+    if ([self sf_db_open]) {
         // db-opening
         if (sql) {
             const char *sql_char = [sql UTF8String];

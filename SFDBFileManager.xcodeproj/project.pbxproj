@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		E61F33BB1E8E43A200480504 /* q.plist in Resources */ = {isa = PBXBuildFile; fileRef = E61F33BA1E8E43A200480504 /* q.plist */; };
-		E6472F541EC4089E00C5D073 /* SFDBSQL.m in Sources */ = {isa = PBXBuildFile; fileRef = E6472F531EC4089E00C5D073 /* SFDBSQL.m */; };
-		E649CD7D1EC0103C002E386B /* SFDBPlistSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = E649CD7C1EC0103C002E386B /* SFDBPlistSetting.m */; };
-		E649CDC21EC15EB8002E386B /* SFDBBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E649CDC11EC15EB8002E386B /* SFDBBase.m */; };
-		E6AE58BE1E9CD339004E34F1 /* SFDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AE58BD1E9CD339004E34F1 /* SFDBManager.m */; };
+		E63A33721F0F1CCD00C400BD /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A33671F0F1CCD00C400BD /* FMDatabase.m */; };
+		E63A33731F0F1CCD00C400BD /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A33691F0F1CCD00C400BD /* FMDatabaseAdditions.m */; };
+		E63A33741F0F1CCD00C400BD /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A336B1F0F1CCD00C400BD /* FMDatabasePool.m */; };
+		E63A33751F0F1CCD00C400BD /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A336D1F0F1CCD00C400BD /* FMDatabaseQueue.m */; };
+		E63A33761F0F1CCD00C400BD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A33701F0F1CCD00C400BD /* FMResultSet.m */; };
+		E63A33771F0F1CCD00C400BD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E63A33711F0F1CCD00C400BD /* Info.plist */; };
+		E63A33821F0F1D0C00C400BD /* SFDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A33791F0F1D0C00C400BD /* SFDBManager.m */; };
+		E63A33831F0F1D0C00C400BD /* SFDBBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A337C1F0F1D0C00C400BD /* SFDBBase.m */; };
+		E63A33841F0F1D0C00C400BD /* SFDBPlistSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A337E1F0F1D0C00C400BD /* SFDBPlistSetting.m */; };
+		E63A33851F0F1D0C00C400BD /* SFDBSQL.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A33801F0F1D0C00C400BD /* SFDBSQL.m */; };
+		E63A33861F0F1D0C00C400BD /* SF_PLIST_TABLENAME.plist in Resources */ = {isa = PBXBuildFile; fileRef = E63A33811F0F1D0C00C400BD /* SF_PLIST_TABLENAME.plist */; };
 		E6AE58C11EA06C8C004E34F1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AE58C01EA06C8C004E34F1 /* libsqlite3.tbd */; };
-		E6C8AF4D1EBC1EF500B5602B /* sfdbTable.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6C8AF4C1EBC1EF500B5602B /* sfdbTable.plist */; };
 		E6CB323D1E7A1AF1001368C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CB323C1E7A1AF1001368C2 /* main.m */; };
 		E6CB32401E7A1AF1001368C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CB323F1E7A1AF1001368C2 /* AppDelegate.m */; };
 		E6CB32431E7A1AF1001368C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CB32421E7A1AF1001368C2 /* ViewController.m */; };
@@ -44,16 +50,30 @@
 
 /* Begin PBXFileReference section */
 		E61F33BA1E8E43A200480504 /* q.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = q.plist; sourceTree = "<group>"; };
-		E6472F521EC4089E00C5D073 /* SFDBSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBSQL.h; sourceTree = "<group>"; };
-		E6472F531EC4089E00C5D073 /* SFDBSQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDBSQL.m; sourceTree = "<group>"; };
-		E649CD7B1EC0103C002E386B /* SFDBPlistSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBPlistSetting.h; sourceTree = "<group>"; };
-		E649CD7C1EC0103C002E386B /* SFDBPlistSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDBPlistSetting.m; sourceTree = "<group>"; };
-		E649CDC01EC15EB8002E386B /* SFDBBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBBase.h; sourceTree = "<group>"; };
-		E649CDC11EC15EB8002E386B /* SFDBBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDBBase.m; sourceTree = "<group>"; };
-		E6AE58BC1E9CD339004E34F1 /* SFDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBManager.h; sourceTree = "<group>"; };
-		E6AE58BD1E9CD339004E34F1 /* SFDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDBManager.m; sourceTree = "<group>"; };
+		E63A33661F0F1CCD00C400BD /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		E63A33671F0F1CCD00C400BD /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		E63A33681F0F1CCD00C400BD /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		E63A33691F0F1CCD00C400BD /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		E63A336A1F0F1CCD00C400BD /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		E63A336B1F0F1CCD00C400BD /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		E63A336C1F0F1CCD00C400BD /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		E63A336D1F0F1CCD00C400BD /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		E63A336E1F0F1CCD00C400BD /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		E63A336F1F0F1CCD00C400BD /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		E63A33701F0F1CCD00C400BD /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		E63A33711F0F1CCD00C400BD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E63A33781F0F1D0C00C400BD /* SFDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBManager.h; sourceTree = "<group>"; };
+		E63A33791F0F1D0C00C400BD /* SFDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDBManager.m; sourceTree = "<group>"; };
+		E63A337B1F0F1D0C00C400BD /* SFDBBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBBase.h; sourceTree = "<group>"; };
+		E63A337C1F0F1D0C00C400BD /* SFDBBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDBBase.m; sourceTree = "<group>"; };
+		E63A337D1F0F1D0C00C400BD /* SFDBPlistSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBPlistSetting.h; sourceTree = "<group>"; };
+		E63A337E1F0F1D0C00C400BD /* SFDBPlistSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDBPlistSetting.m; sourceTree = "<group>"; };
+		E63A337F1F0F1D0C00C400BD /* SFDBSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBSQL.h; sourceTree = "<group>"; };
+		E63A33801F0F1D0C00C400BD /* SFDBSQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDBSQL.m; sourceTree = "<group>"; };
+		E63A33811F0F1D0C00C400BD /* SF_PLIST_TABLENAME.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SF_PLIST_TABLENAME.plist; sourceTree = "<group>"; };
+		E63A33871F0F1FE900C400BD /* SFDBKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBKeys.h; sourceTree = "<group>"; };
+		E63A33881F0F204E00C400BD /* SFDBFileManagerPCH.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDBFileManagerPCH.pch; sourceTree = "<group>"; };
 		E6AE58C01EA06C8C004E34F1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		E6C8AF4C1EBC1EF500B5602B /* sfdbTable.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sfdbTable.plist; sourceTree = "<group>"; };
 		E6CB32381E7A1AF1001368C2 /* SFDBFileManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFDBFileManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CB323C1E7A1AF1001368C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6CB323E1E7A1AF1001368C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -100,15 +120,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E649CD7A1EC01023002E386B /* SFDBSupportFiles */ = {
+		E63A33651F0F1CCD00C400BD /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
-				E649CDC01EC15EB8002E386B /* SFDBBase.h */,
-				E649CDC11EC15EB8002E386B /* SFDBBase.m */,
-				E649CD7B1EC0103C002E386B /* SFDBPlistSetting.h */,
-				E649CD7C1EC0103C002E386B /* SFDBPlistSetting.m */,
-				E6472F521EC4089E00C5D073 /* SFDBSQL.h */,
-				E6472F531EC4089E00C5D073 /* SFDBSQL.m */,
+				E63A33661F0F1CCD00C400BD /* FMDatabase.h */,
+				E63A33671F0F1CCD00C400BD /* FMDatabase.m */,
+				E63A33681F0F1CCD00C400BD /* FMDatabaseAdditions.h */,
+				E63A33691F0F1CCD00C400BD /* FMDatabaseAdditions.m */,
+				E63A336A1F0F1CCD00C400BD /* FMDatabasePool.h */,
+				E63A336B1F0F1CCD00C400BD /* FMDatabasePool.m */,
+				E63A336C1F0F1CCD00C400BD /* FMDatabaseQueue.h */,
+				E63A336D1F0F1CCD00C400BD /* FMDatabaseQueue.m */,
+				E63A336E1F0F1CCD00C400BD /* FMDB.h */,
+				E63A336F1F0F1CCD00C400BD /* FMResultSet.h */,
+				E63A33701F0F1CCD00C400BD /* FMResultSet.m */,
+				E63A33711F0F1CCD00C400BD /* Info.plist */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		E63A337A1F0F1D0C00C400BD /* SFDBSupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E63A337B1F0F1D0C00C400BD /* SFDBBase.h */,
+				E63A337C1F0F1D0C00C400BD /* SFDBBase.m */,
+				E63A337D1F0F1D0C00C400BD /* SFDBPlistSetting.h */,
+				E63A337E1F0F1D0C00C400BD /* SFDBPlistSetting.m */,
+				E63A337F1F0F1D0C00C400BD /* SFDBSQL.h */,
+				E63A33801F0F1D0C00C400BD /* SFDBSQL.m */,
 			);
 			path = SFDBSupportFiles;
 			sourceTree = "<group>";
@@ -150,6 +189,7 @@
 				E6CB323F1E7A1AF1001368C2 /* AppDelegate.m */,
 				E6CB32411E7A1AF1001368C2 /* ViewController.h */,
 				E6CB32421E7A1AF1001368C2 /* ViewController.m */,
+				E63A33881F0F204E00C400BD /* SFDBFileManagerPCH.pch */,
 				E61F33BA1E8E43A200480504 /* q.plist */,
 				E6CB32441E7A1AF1001368C2 /* Main.storyboard */,
 				E6CB32471E7A1AF1001368C2 /* Assets.xcassets */,
@@ -189,6 +229,7 @@
 		E6CB326E1E7A1B64001368C2 /* SFDBFileMain */ = {
 			isa = PBXGroup;
 			children = (
+				E63A33651F0F1CCD00C400BD /* FMDB */,
 				E6CB326F1E7A1B65001368C2 /* SFDBManager */,
 				E6CB32701E7A1B65001368C2 /* SFFileManager */,
 			);
@@ -198,6 +239,11 @@
 		E6CB326F1E7A1B65001368C2 /* SFDBManager */ = {
 			isa = PBXGroup;
 			children = (
+				E63A33781F0F1D0C00C400BD /* SFDBManager.h */,
+				E63A33791F0F1D0C00C400BD /* SFDBManager.m */,
+				E63A33871F0F1FE900C400BD /* SFDBKeys.h */,
+				E63A337A1F0F1D0C00C400BD /* SFDBSupportFiles */,
+				E63A33811F0F1D0C00C400BD /* SF_PLIST_TABLENAME.plist */,
 			);
 			path = SFDBManager;
 			sourceTree = "<group>";
@@ -207,10 +253,6 @@
 			children = (
 				E6CB32711E7A1B73001368C2 /* SFFileManager.h */,
 				E6CB32721E7A1B73001368C2 /* SFFileManager.m */,
-				E6AE58BC1E9CD339004E34F1 /* SFDBManager.h */,
-				E6AE58BD1E9CD339004E34F1 /* SFDBManager.m */,
-				E649CD7A1EC01023002E386B /* SFDBSupportFiles */,
-				E6C8AF4C1EBC1EF500B5602B /* sfdbTable.plist */,
 			);
 			path = SFFileManager;
 			sourceTree = "<group>";
@@ -323,9 +365,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6CB324B1E7A1AF1001368C2 /* LaunchScreen.storyboard in Resources */,
-				E6C8AF4D1EBC1EF500B5602B /* sfdbTable.plist in Resources */,
+				E63A33771F0F1CCD00C400BD /* Info.plist in Resources */,
 				E6CB32481E7A1AF1001368C2 /* Assets.xcassets in Resources */,
 				E61F33BB1E8E43A200480504 /* q.plist in Resources */,
+				E63A33861F0F1D0C00C400BD /* SF_PLIST_TABLENAME.plist in Resources */,
 				E6CB32461E7A1AF1001368C2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,13 +395,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6CB32431E7A1AF1001368C2 /* ViewController.m in Sources */,
+				E63A33851F0F1D0C00C400BD /* SFDBSQL.m in Sources */,
 				E6CB32401E7A1AF1001368C2 /* AppDelegate.m in Sources */,
-				E649CD7D1EC0103C002E386B /* SFDBPlistSetting.m in Sources */,
-				E6472F541EC4089E00C5D073 /* SFDBSQL.m in Sources */,
+				E63A33841F0F1D0C00C400BD /* SFDBPlistSetting.m in Sources */,
+				E63A33721F0F1CCD00C400BD /* FMDatabase.m in Sources */,
+				E63A33751F0F1CCD00C400BD /* FMDatabaseQueue.m in Sources */,
+				E63A33821F0F1D0C00C400BD /* SFDBManager.m in Sources */,
+				E63A33761F0F1CCD00C400BD /* FMResultSet.m in Sources */,
+				E63A33741F0F1CCD00C400BD /* FMDatabasePool.m in Sources */,
 				E6CB32731E7A1B73001368C2 /* SFFileManager.m in Sources */,
-				E649CDC21EC15EB8002E386B /* SFDBBase.m in Sources */,
+				E63A33831F0F1D0C00C400BD /* SFDBBase.m in Sources */,
 				E6CB323D1E7A1AF1001368C2 /* main.m in Sources */,
-				E6AE58BE1E9CD339004E34F1 /* SFDBManager.m in Sources */,
+				E63A33731F0F1CCD00C400BD /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +556,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AR3398K2DD;
+				GCC_PREFIX_HEADER = SFDBFileManager/SFDBFileManagerPCH.pch;
 				INFOPLIST_FILE = SFDBFileManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cnlive-lsf.SFDBFileManager";
@@ -520,6 +569,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AR3398K2DD;
+				GCC_PREFIX_HEADER = SFDBFileManager/SFDBFileManagerPCH.pch;
 				INFOPLIST_FILE = SFDBFileManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cnlive-lsf.SFDBFileManager";

@@ -31,9 +31,9 @@ SFDBSQL *sql = nil;
 - (BOOL)sql_createTableName:(NSString *_Nonnull)tableName cols:(NSDictionary *_Nonnull)cols{
     __block BOOL com = YES;
     
-    [[SFDBManager shareInstance] db_sql:[self returnCreateTableSQL:tableName keys:cols] complete:^(int complete, char * _Nullable erro) {
-        com = complete;
-    }];
+//    [[SFDBManager shareInstance] db_sql:[self returnCreateTableSQL:tableName keys:cols] complete:^(int complete, char * _Nullable erro) {
+//        com = complete;
+//    }];
     
     return com;
 }

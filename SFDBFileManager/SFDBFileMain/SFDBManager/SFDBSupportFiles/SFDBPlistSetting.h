@@ -9,13 +9,21 @@
 #import "SFDBBase.h"
 
 @interface SFDBPlistSetting : SFDBBase
-+ (instancetype _Nonnull )shareInstance;
 /**
- save or delete plist key
+ 初始化方法
+ init-method
 
- @param sql <#sql description#>
+ @return SFDBPlistSetting
  */
-- (void)plist_saveORdeleteTableName:(NSString *_Nullable)sql;
++ (instancetype _Nonnull )shareInstance;
+
+/**
+ 添加表名
+ add table
+ 
+ @param tableName table-name
+ */
+- (void)plist_saveTableName:(NSString *_Nonnull)tableName;
 
 /**
  table-names
@@ -25,8 +33,8 @@
 /**
  return table-name is exist
 
- @param tableName <#tableName description#>
- @return <#return value description#>
+ @param tableName tableName
+ @return YES NO
  */
 - (BOOL)plist_containTableName:(NSString *_Nonnull)tableName;
 @end

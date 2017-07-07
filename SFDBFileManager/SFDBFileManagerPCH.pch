@@ -1,0 +1,17 @@
+//
+//  SFDBFileManagerPCH.pch
+//  SFDBFileManager
+//
+//  Created by cnlive-lsf on 2017/7/7.
+//  Copyright © 2017年 lsf. All rights reserved.
+//
+
+#ifndef SFDBFileManagerPCH_pch
+#define SFDBFileManagerPCH_pch
+
+#import "SFDBKeys.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* SFDBFileManagerPCH_pch */
