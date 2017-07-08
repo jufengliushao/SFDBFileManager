@@ -91,6 +91,7 @@ SFDBManager *m = nil;
         // no exist the table-name
         [self sf_createTable:tableName modelClass:[models[0] class]]; // create table
     }
+    [[SFDBSQL shareInstance] sql_returnInsertTableName:tableName datas:models];
 }
 
 

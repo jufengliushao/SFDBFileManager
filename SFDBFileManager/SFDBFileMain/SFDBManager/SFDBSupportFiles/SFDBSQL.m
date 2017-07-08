@@ -40,6 +40,13 @@ SFDBSQL *sql = nil;
     return sql;
 }
 
+- (NSMutableArray<NSString *> *)sql_returnInsertTableName:(NSString *)tableName datas:(__kindof NSArray<__kindof NSObject *> *)datas{
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
+    
+    NSLog(@"%@", [self returnInsertSQL:tableName model:datas[0]]);
+    
+    return array;
+}
 #pragma mark - private method
 - (__kindof NSString *_Nullable)returnCreateTableSQL:(NSString *_Nonnull)tb keys:(NSDictionary *_Nonnull)keys{
     NSString *sql = [NSString stringWithFormat:@"create table %@", tb];
@@ -59,5 +66,20 @@ SFDBSQL *sql = nil;
     [cols insertString:@" (" atIndex:0]; // add (
     [cols insertString:@")" atIndex:cols.length]; // add )
     return cols;
+}
+
+- (NSString *_Nonnull)returnInsertSQL:(NSString *_Nonnull)name model:(__kindof NSObject *_Nonnull)model{
+    NSString *sql = [NSString stringWithFormat:@"insert into %@ (", name];
+    NSArray *properties = [model allPropertyNames];
+    NSDictionary *ivers = [model getAllIvers];
+    
+    // 拼接列名
+    for (NSString *str in properties) {
+        sql = [sql stringByAppendingString:[NSString stringWithFormat:@" %@,", str]];
+    }
+    
+    sql = [sql stringByReplacingCharactersInRange:NSMakeRange(sql.length-1, 1) withString:@")"];
+    
+    return sql;
 }
 @end
