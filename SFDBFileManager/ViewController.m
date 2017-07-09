@@ -21,6 +21,8 @@
     [super viewDidLoad];
     StudentModel *obj = [[StudentModel alloc] init];
     obj.name = @"xiaoming";
+    obj.gender = @"f";
+    obj.stu_no = @"llll";
     [[SFDBManager shareInstance] sf_inseartData:@[obj] intoTable:@"a"];
     NSLog(@"%@", [[SFFileManager shareInstance] sf_getDocumentsPath]);
 }

@@ -71,14 +71,23 @@ SFDBSQL *sql = nil;
 - (NSString *_Nonnull)returnInsertSQL:(NSString *_Nonnull)name model:(__kindof NSObject *_Nonnull)model{
     NSString *sql = [NSString stringWithFormat:@"insert into %@ (", name];
     NSArray *properties = [model allPropertyNames];
-    NSDictionary *ivers = [model getAllIvers];
+    NSDictionary *dic = [model getAllIvers];
+    NSInteger num = [dic[SFOBJECT_SUMS_KEY] integerValue];
+    Ivar *vars;
+    [dic[SFOBJECT_IVERS_KEY] getValue:&vars];
     
     // 拼接列名
     for (NSString *str in properties) {
         sql = [sql stringByAppendingString:[NSString stringWithFormat:@" %@,", str]];
     }
     
-    sql = [sql stringByReplacingCharactersInRange:NSMakeRange(sql.length-1, 1) withString:@")"];
+    sql = [sql stringByReplacingCharactersInRange:NSMakeRange(sql.length-1, 1) withString:@") values("];
+    
+    for (int i = 0; i < num; i ++) {
+        sql = [sql stringByAppendingString:[NSString stringWithFormat:@" '%@',", object_getIvar(model, vars[i])]];
+    }
+    
+    sql = [sql stringByReplacingCharactersInRange:NSMakeRange(sql.length - 1, 1) withString:@");"];
     
     return sql;
 }
