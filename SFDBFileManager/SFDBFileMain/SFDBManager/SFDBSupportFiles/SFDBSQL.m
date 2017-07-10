@@ -43,7 +43,9 @@ SFDBSQL *sql = nil;
 - (NSMutableArray<NSString *> *)sql_returnInsertTableName:(NSString *)tableName datas:(__kindof NSArray<__kindof NSObject *> *)datas{
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
     
-    NSLog(@"%@", [self returnInsertSQL:tableName model:datas[0]]);
+    for (__kindof NSObject *obj in datas) {
+        [array addObject:[self returnInsertSQL:tableName model:obj]];
+    }
     
     return array;
 }
