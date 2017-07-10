@@ -30,6 +30,14 @@
 - (NSMutableArray <NSString *>*_Nullable)sql_returnInsertTableName:(NSString *_Nonnull)tableName datas:(__kindof NSArray <__kindof NSObject *>*_Nonnull)datas;
 
 /**
+ 返回获取所有表内数据的sql
+
+ @param tableName 表名
+ @return sql
+ */
+- (NSString *_Nullable)sql_returnSelectAll:(NSString *_Nonnull)tableName;
+
+/**
  delete table
 
  @param tableName table-name

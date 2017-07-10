@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SFDBFileManager/SFDBFileMain/SFDBManager/SFDBManager.m"
-            timestampString = "521346111.262574"
+            filePath = "SFDBFileManager/SFDBFileMain/SFDBManager/SFDBSupportFiles/SFDBPlistSetting.m"
+            timestampString = "521350262.07101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "-sf_inseartData:intoTable:"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-plist_containTableName:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -54,4 +54,14 @@
  @param tableName tableName
  */
 - (void)sf_inseartData:(NSArray <__kindof NSObject *>*_Nullable)models intoTable:(NSString *_Nonnull)tableName;
+
+
+/**
+ select all datas from table
+
+ @param tableName 表名
+ @param model 需要转化成的model的class
+ @param complete 完成回调
+ */
+- (void)sf_getAllDatas:(NSString *_Nonnull)tableName class:(Class _Nullable)model complete:(void(^_Nullable)(BOOL success, NSArray *_Nullable models))complete;
 @end

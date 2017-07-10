@@ -106,7 +106,32 @@ SFDBManager *m = nil;
     }];
 }
 
-
+- (void)sf_getAllDatas:(NSString *)tableName class:(Class)model complete:(void (^)(BOOL, NSArray * _Nullable))complete{
+    if (!tableName || !model ||  ![[SFDBPlistSetting shareInstance] plist_containTableName:tableName]) {
+        // 条件不满足 class为空 or 表名为空 or 表名不存在
+        return;
+    }
+    
+    if (![self returnDbOpen]) {
+        // 数据库打开失败
+        return;
+    }
+    
+    [self queue_readData:^{
+        FMResultSet *resultSet = [_db executeQuery:[[SFDBSQL shareInstance] sql_returnSelectAll:tableName]];
+        NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
+        NSArray *properties = [[[model alloc] init] allPropertyNames];
+        while ([resultSet next]) {
+            id model1 = [[model alloc] init];
+            for (NSString *key in properties) {
+                [model1 setValue:[resultSet stringForColumn:key] forKey:key];
+            }
+            [array addObject:model1];
+        }
+        complete(YES, array);
+    }];
+    
+}
 #pragma mark private method
 /**
  创建db文件

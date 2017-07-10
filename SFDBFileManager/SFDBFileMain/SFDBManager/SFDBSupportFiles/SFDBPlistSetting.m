@@ -39,6 +39,7 @@ SFDBPlistSetting *plist_setting = nil;
     if (self = [super init]) {
         plist_path = [[[SFFileManager shareInstance] sf_getDocumentsPath] stringByAppendingPathComponent:SF_PLIST_NAME];
         [self plist_exist];
+        [self plist_containTableName:@""];
     }
     return self;
 }

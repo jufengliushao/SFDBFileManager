@@ -39,6 +39,10 @@
     obj3.gender = @"f";
     obj3.stu_no = @"llll";
     [[SFDBManager shareInstance] sf_inseartData:@[obj, obj1, obj2, obj3] intoTable:@"a"];
+    
+    [[SFDBManager shareInstance] sf_getAllDatas:@"a" class:[StudentModel class] complete:^(BOOL success, NSArray * _Nullable models) {
+        NSLog(@"%@", models);
+    }];
     NSLog(@"%@", [[SFFileManager shareInstance] sf_getDocumentsPath]);
 }
 

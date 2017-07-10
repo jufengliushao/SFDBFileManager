@@ -49,6 +49,10 @@ SFDBSQL *sql = nil;
     
     return array;
 }
+
+- (NSString *)sql_returnSelectAll:(NSString *)tableName{
+    return [NSString stringWithFormat:@"select *from %@;", tableName];
+}
 #pragma mark - private method
 - (__kindof NSString *_Nullable)returnCreateTableSQL:(NSString *_Nonnull)tb keys:(NSDictionary *_Nonnull)keys{
     NSString *sql = [NSString stringWithFormat:@"create table %@", tb];
