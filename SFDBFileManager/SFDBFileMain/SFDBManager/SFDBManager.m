@@ -91,7 +91,19 @@ SFDBManager *m = nil;
         // no exist the table-name
         [self sf_createTable:tableName modelClass:[models[0] class]]; // create table
     }
-    [[SFDBSQL shareInstance] sql_returnInsertTableName:tableName datas:models];
+    NSArray *array = [[SFDBSQL shareInstance] sql_returnInsertTableName:tableName datas:models];
+    
+    if (![self returnDbOpen]) {
+        // 数据库打开失败
+        return;
+    }
+    
+    // 插入数据
+    [self queue_writePlist:^{
+        for (NSString *sql in array) {
+            [_db executeUpdate:sql];
+        }
+    }];
 }
 
 

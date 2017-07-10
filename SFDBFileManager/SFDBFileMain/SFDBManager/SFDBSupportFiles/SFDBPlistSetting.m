@@ -65,9 +65,7 @@ SFDBPlistSetting *plist_setting = nil;
 }
 
 - (void)readPlistData{
-    [self queue_readData:^{
-       db_table_names = [NSMutableArray arrayWithContentsOfFile:plist_path];
-    }];
+    db_table_names = [NSMutableArray arrayWithContentsOfFile:plist_path];
 }
 #pragma mark - getter 
 - (NSArray *)currentTableNames{

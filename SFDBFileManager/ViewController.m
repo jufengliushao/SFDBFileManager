@@ -23,7 +23,22 @@
     obj.name = @"xiaoming";
     obj.gender = @"f";
     obj.stu_no = @"llll";
-    [[SFDBManager shareInstance] sf_inseartData:@[obj] intoTable:@"a"];
+    
+    StudentModel *obj1 = [[StudentModel alloc] init];
+    obj1.name = @"xiaoming1";
+    obj1.gender = @"f";
+    obj1.stu_no = @"llll";
+    
+    StudentModel *obj2 = [[StudentModel alloc] init];
+    obj2.name = @"xiaoming2";
+    obj2.gender = @"f";
+    obj2.stu_no = @"llll";
+    
+    StudentModel *obj3 = [[StudentModel alloc] init];
+    obj3.name = @"xiaoming3";
+    obj3.gender = @"f";
+    obj3.stu_no = @"llll";
+    [[SFDBManager shareInstance] sf_inseartData:@[obj, obj1, obj2, obj3] intoTable:@"a"];
     NSLog(@"%@", [[SFFileManager shareInstance] sf_getDocumentsPath]);
 }
 
