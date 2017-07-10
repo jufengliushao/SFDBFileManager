@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SFDBFileManager/SFDBFileMain/SFDBManager/SFDBSupportFiles/SFDBPlistSetting.m"
-            timestampString = "521350262.07101"
+            filePath = "SFDBFileManager/ViewController.m"
+            timestampString = "521351227.434173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "-plist_containTableName:"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

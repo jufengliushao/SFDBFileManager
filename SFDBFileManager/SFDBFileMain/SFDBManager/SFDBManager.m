@@ -132,6 +132,22 @@ SFDBManager *m = nil;
     }];
     
 }
+
+- (void)sf_deleteAllDatas:(NSString *)tableName{
+    if (!tableName || ![[SFDBPlistSetting shareInstance] plist_containTableName:tableName]) {
+        // 表名为空 or 表名不存在
+        return;
+    }
+    
+    if (![self returnDbOpen]) {
+        // 数据库打开失败
+        return;
+    }
+    
+    [self queue_writePlist:^{
+        [_db executeUpdate:[[SFDBSQL shareInstance] sql_returnDeleteAll:tableName]];
+    }];
+}
 #pragma mark private method
 /**
  创建db文件

@@ -64,4 +64,11 @@
  @param complete 完成回调
  */
 - (void)sf_getAllDatas:(NSString *_Nonnull)tableName class:(Class _Nullable)model complete:(void(^_Nullable)(BOOL success, NSArray *_Nullable models))complete;
+
+/**
+ delete all datas in tableName
+
+ @param tableName 表名
+ */
+- (void)sf_deleteAllDatas:(NSString *_Nonnull)tableName;
 @end

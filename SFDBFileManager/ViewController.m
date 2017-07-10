@@ -44,6 +44,8 @@
         NSLog(@"%@", models);
     }];
     NSLog(@"%@", [[SFFileManager shareInstance] sf_getDocumentsPath]);
+    
+    [[SFDBManager shareInstance] sf_deleteAllDatas:@"a"];
 }
 
 

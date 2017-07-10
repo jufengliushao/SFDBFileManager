@@ -38,6 +38,14 @@
 - (NSString *_Nullable)sql_returnSelectAll:(NSString *_Nonnull)tableName;
 
 /**
+ 删除表内所有数据
+
+ @param tableName 表名
+ @return sql
+ */
+- (NSString *_Nullable)sql_returnDeleteAll:(NSString *_Nonnull)tableName;
+
+/**
  delete table
 
  @param tableName table-name
