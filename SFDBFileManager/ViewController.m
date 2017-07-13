@@ -41,9 +41,9 @@
     [[SFDBManager shareInstance] sf_inseartData:@[obj, obj1, obj2, obj3] intoTable:@"a"];
     
     [[SFDBManager shareInstance] sf_getAllDatas:@"a" class:[StudentModel class] complete:^(BOOL success, NSArray * _Nullable models) {
-        NSLog(@"%@", models);
+        SFLog(@"%@", models);
     }];
-    NSLog(@"%@", [[SFFileManager shareInstance] sf_getDocumentsPath]);
+    SFLog(@"%@", [[SFFileManager shareInstance] sf_getDocumentsPath]);
     
     [[SFDBManager shareInstance] sf_deleteAllDatas:@"a"];
 }
